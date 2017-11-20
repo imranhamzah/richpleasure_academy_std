@@ -70,4 +70,5 @@
     <string name="dummy_content">DUMMY\nCONTENT</string>
     <string name="welcome_to_rich_pleasure_academy">Welcome to Rich Pleasure Academy</string>
     <string name="sign_in">Sign In</string>
+    <string name="title_activity_subjects">SubjectsActivity</string>
 </resources>

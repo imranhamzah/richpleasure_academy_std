@@ -46,4 +46,8 @@ public class DashboardActivity extends AppCompatActivity {
         startActivity(login);
     }
 
+    public void gotoSubjects(View view) {
+        Intent intent = new Intent(this,SubjectsActivity.class);
+        startActivity(intent);
+    }
 }

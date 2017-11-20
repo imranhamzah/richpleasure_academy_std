@@ -31,25 +31,25 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
         <activity
             android:name=".LoginActivity"
             android:label="@string/app_name"
-            android:screenOrientation="portrait">
-        </activity>
-
+            android:screenOrientation="portrait"></activity>
         <activity
             android:name=".MainActivity"
             android:label="@string/app_name" />
         <activity
             android:name=".DashboardActivity"
             android:label="@string/title_activity_dashboard" />
-
         <activity
             android:name="com.facebook.FacebookActivity"
             android:configChanges="keyboard|keyboardHidden|screenLayout|screenSize|orientation"
             android:label="@string/app_name"
             android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+        <activity
+            android:name=".SubjectsActivity"
+            android:label="@string/title_activity_subjects"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 
 </manifest>
