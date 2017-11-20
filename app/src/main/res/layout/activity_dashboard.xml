@@ -20,6 +20,13 @@
             android:padding="5dp"
             android:orientation="vertical">
 
+            <Button
+                android:id="@+id/btn_logout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:onClick="logout"
+                android:text="@string/logout" />
+
             <TextView
                 android:id="@+id/tutors"
                 android:layout_width="wrap_content"

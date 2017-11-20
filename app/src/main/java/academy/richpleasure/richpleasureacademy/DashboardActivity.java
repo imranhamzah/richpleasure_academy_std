@@ -9,6 +9,8 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.TextView;
 
+import com.facebook.login.LoginManager;
+
 public class DashboardActivity extends AppCompatActivity {
 
     private TextView mTextMessage;
@@ -18,17 +20,6 @@ public class DashboardActivity extends AppCompatActivity {
 
         @Override
         public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-            switch (item.getItemId()) {
-                case R.id.navigation_home:
-                    mTextMessage.setText(R.string.title_home);
-                    return true;
-                case R.id.navigation_dashboard:
-                    mTextMessage.setText(R.string.title_dashboard);
-                    return true;
-                case R.id.navigation_notifications:
-                    mTextMessage.setText(R.string.title_notifications);
-                    return true;
-            }
             return false;
         }
 
@@ -46,6 +37,13 @@ public class DashboardActivity extends AppCompatActivity {
     {
         Intent intent = new Intent(this,MainActivity.class);
         startActivity(intent);
+    }
+
+    public void logout(View view)
+    {
+        LoginManager.getInstance().logOut();
+        Intent login = new Intent(getApplicationContext(),LoginActivity.class);
+        startActivity(login);
     }
 
 }

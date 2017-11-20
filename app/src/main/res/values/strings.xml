@@ -61,4 +61,13 @@
     <string name="password_hint">Password</string>
     <string name="email_hint">Email</string>
     <string name="confirm_hint">Confirm Password</string>
+    <string name="facebook_app_id">1480481138695652</string>
+    <string name="account">Account</string>
+    <string name="logout">Logout</string>
+
+    <string name="title_activity_welcome">WelcomeActivity</string>
+    <string name="dummy_button">Dummy Button</string>
+    <string name="dummy_content">DUMMY\nCONTENT</string>
+    <string name="welcome_to_rich_pleasure_academy">Welcome to Rich Pleasure Academy</string>
+    <string name="sign_in">Sign In</string>
 </resources>

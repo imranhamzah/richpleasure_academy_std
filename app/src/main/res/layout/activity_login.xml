@@ -33,30 +33,34 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.0" />
 
-    <ImageView
-        android:src="@drawable/facebook"
-        android:layout_width="@dimen/option_size"
-        android:layout_height="@dimen/option_size"
-        android:id="@+id/first"
+    <com.facebook.login.widget.LoginButton
+        android:id="@+id/login_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
         app:layout_constraintRight_toLeftOf="@+id/second"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.95" />
+        app:layout_constraintVertical_bias="0.939"
+        />
+
 
     <ImageView
         android:src="@drawable/linkedin"
+        android:onClick="gotoDashboard"
         android:layout_width="@dimen/option_size"
         android:layout_height="@dimen/option_size"
         android:id="@+id/second"
-        app:layout_constraintLeft_toRightOf="@+id/first"
+        app:layout_constraintLeft_toRightOf="@+id/login_button"
         app:layout_constraintRight_toLeftOf="@+id/last"
-        app:layout_constraintTop_toTopOf="@+id/first"
-        app:layout_constraintBottom_toBottomOf="@+id/first"
+        app:layout_constraintTop_toTopOf="@+id/login_button"
+        app:layout_constraintBottom_toBottomOf="@+id/login_button"
         app:layout_constraintVertical_bias="0.0" />
 
     <ImageView
         android:src="@drawable/twitter"
+        android:onClick="gotoDashboard"
         android:id="@+id/last"
         android:layout_width="@dimen/option_size"
         android:layout_height="@dimen/option_size"
