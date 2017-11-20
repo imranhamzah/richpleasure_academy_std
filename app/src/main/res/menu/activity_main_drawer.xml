@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:title="@string/spm_seminar_2017">
+        <menu>
+            <item
+                android:id="@+id/add_math_notes"
+                android:icon="@drawable/ic_menu_share"
+                android:title="@string/add_math_notes" />
+            <item
+                android:id="@+id/matematik_tambahan_notes"
+                android:icon="@drawable/ic_menu_send"
+                android:title="@string/matematik_tambahan_notes" />
+            <item
+                android:id="@+id/matematik_tambahan_ppt"
+                android:icon="@drawable/ic_menu_send"
+                android:title="@string/matematik_tambahan_ppt" />
+            <item
+                android:id="@+id/physics_notes"
+                android:icon="@drawable/ic_menu_share"
+                android:title="@string/physics_notes" />
+            <item
+                android:id="@+id/fizik_ppt"
+                android:icon="@drawable/ic_menu_share"
+                android:title="@string/fizik_ppt" />
+            <item
+                android:id="@+id/math_notes"
+                android:icon="@drawable/ic_menu_send"
+                android:title="Matematik Notes" />
+        </menu>
+    </item>
+    <item android:title="@string/spm_seminar_2016">
+        <menu>
+            <item
+                android:id="@+id/math_seminar_2016"
+                android:icon="@drawable/ic_menu_camera"
+                android:title="@string/mathematics"
+                />
+            <item
+                android:id="@+id/math_seminar_answer_2016"
+                android:icon="@drawable/ic_menu_camera"
+                android:title="@string/mathematics_answer"
+                />
+            <item
+                android:id="@+id/add_math_seminar_2016"
+                android:icon="@drawable/ic_menu_camera"
+                android:title="@string/add_math"
+                />
+            <item
+                android:id="@+id/physics_seminar_2016"
+                android:icon="@drawable/ic_menu_camera"
+                android:title="@string/physics"
+                />
+        </menu>
+    </item>
+
+    <item android:title="@string/spm_seminar_2015">
+        <menu>
+            <item
+                android:id="@+id/math_seminar_2015"
+                android:icon="@drawable/ic_menu_camera"
+                android:title="@string/mathematics"
+                />
+            <item
+                android:id="@+id/add_math_seminar_2015"
+                android:icon="@drawable/ic_menu_camera"
+                android:title="@string/add_math"
+                />
+            <item
+                android:id="@+id/physics_seminar_2015"
+                android:icon="@drawable/ic_menu_camera"
+                android:title="@string/physics"
+                />
+        </menu>
+    </item>
+
+
+</menu>

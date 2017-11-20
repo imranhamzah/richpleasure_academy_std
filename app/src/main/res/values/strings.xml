@@ -1,0 +1,64 @@
+<resources>
+    <string name="app_name">Rich Pleasure Academy</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <string name="action_settings">Settings</string>
+    <string name="don_t_say_you_don_t_have_enough_time_you_have_exactly_the_same_number_of_hours_per_day_that_were_given_to_everyone">Don’t say you don’t have enough time. You have exactly the same number of hours per day that were given to everyone</string>
+    <string name="math_form_5">Math Form 5</string>
+    <string name="math_form_4">Math Form 4</string>
+    <string name="physics_form_5">Physics Form 5</string>
+    <string name="physics_form_4">Physics Form 4</string>
+    <string name="add_math_form_5">Add Math Form 5</string>
+    <string name="add_math_form_4">Add Math Form 4</string>
+    <string name="form_4">Form 4</string>
+    <string name="form_5">Form 5</string>
+    <string name="form_1">Form 1</string>
+    <string name="form_2">Form 2</string>
+    <string name="spm_seminar_2017">SPM Seminar 2017</string>
+    <string name="add_maths_notes">Add Maths Notes</string>
+    <string name="fizik_notes">Fizik Notes</string>
+    <string name="add_math_paper_1">Add Math Paper 1</string>
+    <string name="add_math_paper_2">Add Math Paper 2</string>
+    <string name="add_math_notes">Add Math Notes</string>
+    <string name="physics_notes">Physics Notes</string>
+    <string name="matematik_tambahan_notes">Matematik Tambahan Notes</string>
+    <string name="matematik_tambahan_ppt">Matematik Tambahan (PPT)</string>
+    <string name="fizik_ppt">Fizik (PPT)</string>
+    <string name="spm_seminar_2016">SPM Seminar 2016</string>
+    <string name="mathematics">Mathematics</string>
+    <string name="mathematics_answer">Mathematics (Answer)</string>
+    <string name="add_math">Add Math</string>
+    <string name="physics">Physics</string>
+    <string name="tutor_name">Cikgu Imran (Shah Alam / Klang)</string>
+    <string name="spm_seminar_2015">SPM Seminar 2015</string>
+    <string name="title_activity_dashboard">DashboardActivity</string>
+    <string name="title_home">Home</string>
+    <string name="title_dashboard">Dashboard</string>
+    <string name="title_notifications">Notifications</string>
+    <string name="seminar">Seminar</string>
+    <string name="title_activity_login">Sign in</string>
+
+    <!-- Strings related to login -->
+    <string name="prompt_email">Email</string>
+    <string name="prompt_password">Password (optional)</string>
+    <string name="action_sign_in">Sign in or register</string>
+    <string name="action_sign_in_short">Sign in</string>
+    <string name="error_invalid_email">This email address is invalid</string>
+    <string name="error_invalid_password">This password is too short</string>
+    <string name="error_incorrect_password">This password is incorrect</string>
+    <string name="error_field_required">This field is required</string>
+    <string name="permission_rationale">"Contacts permissions are needed for providing email
+        completions."
+    </string>
+    <string name="subjects">Subjects</string>
+    <string name="tutors">Tutors</string>
+
+    <string name="sign_up_label">Sign Up</string>
+    <string name="log_in_label">Log In</string>
+    <string name="forgot_password">Forgot Password?</string>
+    <string name="password_hint">Password</string>
+    <string name="email_hint">Email</string>
+    <string name="confirm_hint">Confirm Password</string>
+</resources>

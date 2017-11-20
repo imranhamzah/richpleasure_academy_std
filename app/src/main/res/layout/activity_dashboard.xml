@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/container"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="academy.richpleasure.richpleasureacademy.DashboardActivity">
+
+    <FrameLayout
+        android:id="@+id/content"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="5dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tutors"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="left"
+                android:layout_marginBottom="-10dp"
+                android:layout_marginLeft="6dp"
+                android:layout_marginTop="10dp"
+                android:onClick="gotoSeminar"
+                android:text="@string/tutors" />
+
+            <HorizontalScrollView
+                android:id="@+id/horizontalScroll"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:animateLayoutChanges="true"
+                android:scrollbars="none">
+
+                <LinearLayout
+                    android:id="@+id/subjects_row"
+                    android:layout_width="120dp"
+                    android:layout_height="120dp"
+                    android:layout_alignParentLeft="true"
+                    android:layout_marginTop="20dp"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:id="@+id/imageView9"
+                        android:layout_width="110dp"
+                        android:layout_height="110dp"
+                        android:layout_marginRight="5dp"
+                        android:layout_weight="1"
+                        android:onClick="gotoSeminar"
+                        app:srcCompat="@drawable/imran_pic" />
+
+                    <ImageView
+                        android:id="@+id/imageView8"
+                        android:layout_width="110dp"
+                        android:layout_height="110dp"
+                        android:layout_marginRight="5dp"
+                        android:layout_weight="1"
+                        android:onClick="gotoSeminar"
+                        app:srcCompat="@drawable/imran_pic" />
+
+                    <ImageView
+                        android:id="@+id/imageView7"
+                        android:layout_width="110dp"
+                        android:layout_height="110dp"
+                        android:layout_marginRight="5dp"
+                        android:layout_weight="1"
+                        android:onClick="gotoSeminar"
+                        app:srcCompat="@drawable/imran_pic" />
+
+                    <ImageView
+                        android:id="@+id/imageView6"
+                        android:layout_width="110dp"
+                        android:layout_height="110dp"
+                        android:layout_marginRight="5dp"
+                        android:layout_weight="1"
+                        android:onClick="gotoSeminar"
+                        app:srcCompat="@drawable/imran_pic" />
+                </LinearLayout>
+
+            </HorizontalScrollView>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="@dimen/subjects_margin_top_dashboard"
+            android:padding="5dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/subjects"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="left"
+                android:layout_marginBottom="-10dp"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="10dp"
+                android:onClick="gotoSeminar"
+                android:text="@string/subjects" />
+
+            <HorizontalScrollView
+                android:id="@+id/horizontalScrollSubjects"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:animateLayoutChanges="true"
+                android:scrollbars="none">
+
+                <LinearLayout
+                    android:id="@+id/subjects_row1"
+                    android:layout_width="120dp"
+                    android:layout_height="120dp"
+                    android:layout_alignParentLeft="true"
+                    android:layout_marginTop="20dp"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:id="@+id/imageView91"
+                        android:layout_width="110dp"
+                        android:layout_height="110dp"
+                        android:layout_marginRight="5dp"
+                        android:layout_weight="1"
+                        android:onClick="gotoSeminar"
+                        app:srcCompat="@drawable/imran_pic" />
+
+                    <ImageView
+                        android:id="@+id/imageView81"
+                        android:layout_width="110dp"
+                        android:layout_height="110dp"
+                        android:layout_marginRight="5dp"
+                        android:layout_weight="1"
+                        android:onClick="gotoSeminar"
+                        app:srcCompat="@drawable/imran_pic" />
+
+                    <ImageView
+                        android:id="@+id/imageView71"
+                        android:layout_width="110dp"
+                        android:layout_height="110dp"
+                        android:layout_marginRight="5dp"
+                        android:layout_weight="1"
+                        android:onClick="gotoSeminar"
+                        app:srcCompat="@drawable/imran_pic" />
+
+                    <ImageView
+                        android:id="@+id/imageView61"
+                        android:layout_width="110dp"
+                        android:layout_height="110dp"
+                        android:layout_marginRight="5dp"
+                        android:layout_weight="1"
+                        android:onClick="gotoSeminar"
+                        app:srcCompat="@drawable/imran_pic" />
+                </LinearLayout>
+
+            </HorizontalScrollView>
+
+        </LinearLayout>
+
+
+    </FrameLayout>
+
+</LinearLayout>
