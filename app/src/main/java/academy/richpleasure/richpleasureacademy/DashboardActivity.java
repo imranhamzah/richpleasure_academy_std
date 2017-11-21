@@ -83,6 +83,6 @@ public class DashboardActivity extends AppCompatActivity {
             public void run() {
                 handler.post(Update);
             }
-        }, 4000, 4000);
+        }, 20000, 20000);
     }
 }

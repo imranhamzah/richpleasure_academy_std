@@ -25,11 +25,18 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
+
+    dexOptions {
+        incremental true
+        javaMaxHeapSize "3g"
+    }
 }
 
 repositories {
     mavenCentral()
 }
+
+
 
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
