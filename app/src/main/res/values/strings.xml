@@ -33,7 +33,7 @@
     <string name="physics">Physics</string>
     <string name="tutor_name">Cikgu Imran (Shah Alam / Klang)</string>
     <string name="spm_seminar_2015">SPM Seminar 2015</string>
-    <string name="title_activity_dashboard">DashboardActivity</string>
+    <string name="title_activity_dashboard"></string>
     <string name="title_home">Home</string>
     <string name="title_dashboard">Dashboard</string>
     <string name="title_notifications">Notifications</string>
