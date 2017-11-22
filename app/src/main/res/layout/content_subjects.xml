@@ -8,4 +8,9 @@
     tools:context="academy.richpleasure.richpleasureacademy.SubjectsActivity"
     tools:showIn="@layout/app_bar_subjects">
 
+    <com.mindorks.placeholderview.PlaceHolderView
+        android:id="@+id/galleryView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
 </android.support.constraint.ConstraintLayout>
