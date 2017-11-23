@@ -85,4 +85,10 @@ public class DashboardActivity extends AppCompatActivity {
             }
         }, 20000, 20000);
     }
+
+    public void gotoInbox(View view)
+    {
+        Intent inbox = new Intent(getApplicationContext(),InboxActivity.class);
+        startActivity(inbox);
+    }
 }
