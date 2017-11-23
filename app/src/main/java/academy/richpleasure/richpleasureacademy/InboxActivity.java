@@ -26,6 +26,8 @@ public class InboxActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_load_more);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setDisplayShowHomeEnabled(true);
         ButterKnifeLite.bind(this);
         setupView();
     }
@@ -56,5 +58,11 @@ public class InboxActivity extends AppCompatActivity {
                 });
             }
         }, 8000);
+    }
+
+    @Override
+    public boolean onSupportNavigateUp() {
+        onBackPressed();
+        return true;
     }
 }

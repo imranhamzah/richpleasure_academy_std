@@ -45,7 +45,6 @@ import me.relex.circleindicator.CircleIndicator;
 
 public class DashboardActivity extends DrawerActivity {
 
-    private Toolbar toolbar;
     private CollapsingToolbarLayout collapsingToolbar;
     private AppBarLayout appBarLayout;
     private RecyclerView recList;
@@ -80,33 +79,35 @@ public class DashboardActivity extends DrawerActivity {
         appBarLayout = (AppBarLayout) findViewById(R.id.appbar);
         recList = (RecyclerView) findViewById(R.id.scrollableview);
 
-        setSupportActionBar((Toolbar) findViewById(R.id.toolbar_dashboard));
+        setSupportActionBar((Toolbar) findViewById(R.id.anim_toolbar));
 
 
-        setDrawerTheme(
+ /*       setDrawerTheme(
                 new DrawerTheme(this)
                         .setBackgroundColorRes(R.color.window_background_3)
                         .setTextColorPrimaryRes(R.color.text_color_primary_3)
                         .setTextColorSecondaryRes(R.color.text_color_secondary_3)
         );
-
+*/
         addItems(new DrawerItem()
-                        .setTextPrimary(getString(R.string.lorem_ipsum_short))
-                        .setTextSecondary(getString(R.string.lorem_ipsum_long)),
+                        .setTextPrimary(getString(R.string.inbox)),
                 new DrawerFragmentItem()
-                        .setFragment(new ListFragment())
-                        .setTextPrimary(getString(R.string.lorem_ipsum_medium)),
-                new DrawerFragmentItem()
-                        .setFragment(new Fragment())
-                        .setImage(ContextCompat.getDrawable(this, R.drawable.ic_flag_white))
-                        .setTextPrimary(getString(R.string.lorem_ipsum_short))
-                        .setTextSecondary(getString(R.string.lorem_ipsum_long))
+                        .setTextPrimary(getString(R.string.logout))
         );
         setOnItemClickListener(new DrawerItem.OnItemClickListener() {
             @Override
             public void onClick(DrawerItem item, long id, int position) {
                 selectItem(position);
-                Toast.makeText(DashboardActivity.this, "Clicked item #" + position, Toast.LENGTH_SHORT).show();
+                if(position==0)
+                {
+                    Intent inbox = new Intent(getApplicationContext(),InboxActivity.class);
+                    startActivity(inbox);
+                }else if(position == 1)
+                {
+                    Intent login = new Intent(getApplicationContext(), LoginActivity.class);
+                    startActivity(login);
+                }
+                closeDrawer();
             }
         });
 
