@@ -6,6 +6,7 @@
     <dimen name="nav_header_height">160dp</dimen>
     <dimen name="fab_margin">16dp</dimen>
     <dimen name="subjects_margin_top_dashboard">180dp</dimen>
+    <dimen name="container_margin">8dp</dimen>
 
 
     <item name="match_parent" format="integer" type="dimen">-1</item>
