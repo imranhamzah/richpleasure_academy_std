@@ -92,6 +92,8 @@ public class DashboardActivity extends DrawerActivity {
         addItems(new DrawerItem()
                         .setTextPrimary(getString(R.string.inbox)),
                 new DrawerItem()
+                        .setTextPrimary(getString(R.string.subjects)),
+                new DrawerItem()
                         .setTextPrimary(getString(R.string.logout)),
                 new DrawerItem()
                         .setTextPrimary(getString(R.string.billing))
@@ -102,12 +104,16 @@ public class DashboardActivity extends DrawerActivity {
                 selectItem(position);
                 if(position==0)
                 {
-                    Intent inbox = new Intent(getApplicationContext(),InboxActivity.class);
-                    startActivity(inbox);
+                    Intent i = new Intent(getApplicationContext(),InboxActivity.class);
+                    startActivity(i);
                 }else if(position == 1)
                 {
-                    Intent login = new Intent(getApplicationContext(), LoginActivity.class);
-                    startActivity(login);
+                    Intent i = new Intent(getApplicationContext(), SubjectListActivity.class);
+                    startActivity(i);
+                }else if(position == 2)
+                {
+                    Intent i = new Intent(getApplicationContext(), LoginActivity.class);
+                    startActivity(i);
                 }
                 closeDrawer();
             }

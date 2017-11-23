@@ -23,13 +23,11 @@
         <activity
             android:name=".WelcomeActivity"
             android:theme="@style/AppTheme.NoActionBar">
-
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-
         </activity>
         <activity
             android:name=".LoginActivity"
@@ -40,12 +38,11 @@
             android:label="@string/app_name" />
         <activity
             android:name=".InboxActivity"
-            android:label="@string/inbox">
-        </activity>
+            android:label="@string/inbox"></activity>
         <activity
             android:name=".DashboardActivity"
-            android:theme="@style/AppTheme.NoActionBar"
-            android:label="@string/title_activity_dashboard"></activity>
+            android:label="@string/title_activity_dashboard"
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name="com.facebook.FacebookActivity"
             android:configChanges="keyboard|keyboardHidden|screenLayout|screenSize|orientation"
@@ -55,11 +52,15 @@
             android:name=".SubjectsActivity"
             android:label="@string/title_activity_subjects"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".NotificationActivity"></activity>
+        <activity
+            android:name=".SubjectListActivity"
+            android:label="@string/subject_list" />
+        <activity android:name=".NotificationActivity" />
 
         <receiver android:name=".AlarmReceiver">
             <intent-filter>
                 <action android:name="android.media.action.DISPLAY_NOTIFICATION" />
+
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </receiver>
