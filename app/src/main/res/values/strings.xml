@@ -106,5 +106,6 @@
 
     <string name="drawer_frame_layout">DrawerFrameLayout</string>
     <string name="drawer_activity">DrawerActivity</string>
+    <string name="billing">Billing</string>
 
 </resources>

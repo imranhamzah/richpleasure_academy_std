@@ -91,8 +91,10 @@ public class DashboardActivity extends DrawerActivity {
 */
         addItems(new DrawerItem()
                         .setTextPrimary(getString(R.string.inbox)),
-                new DrawerFragmentItem()
-                        .setTextPrimary(getString(R.string.logout))
+                new DrawerItem()
+                        .setTextPrimary(getString(R.string.logout)),
+                new DrawerItem()
+                        .setTextPrimary(getString(R.string.billing))
         );
         setOnItemClickListener(new DrawerItem.OnItemClickListener() {
             @Override
