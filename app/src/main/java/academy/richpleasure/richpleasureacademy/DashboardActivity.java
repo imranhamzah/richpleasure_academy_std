@@ -6,9 +6,14 @@ import android.content.Context;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.graphics.drawable.BitmapDrawable;
+import android.os.Build;
 import android.os.Bundle;
 import android.support.design.widget.AppBarLayout;
 import android.support.design.widget.CollapsingToolbarLayout;
+import android.support.v4.app.Fragment;
+import android.support.v4.app.ListFragment;
+import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.graphics.Palette;
 import android.support.v7.widget.LinearLayoutManager;
@@ -22,7 +27,14 @@ import android.view.Window;
 import android.os.Bundle;
 import android.os.Handler;
 import android.support.v4.view.ViewPager;
+import android.view.WindowManager;
 import android.widget.Toast;
+
+import com.heinrichreimersoftware.materialdrawer.DrawerActivity;
+import com.heinrichreimersoftware.materialdrawer.structure.DrawerFragmentItem;
+import com.heinrichreimersoftware.materialdrawer.structure.DrawerItem;
+import com.heinrichreimersoftware.materialdrawer.structure.DrawerProfile;
+import com.heinrichreimersoftware.materialdrawer.theme.DrawerTheme;
 
 import java.util.ArrayList;
 import java.util.Calendar;
@@ -31,7 +43,7 @@ import java.util.TimerTask;
 
 import me.relex.circleindicator.CircleIndicator;
 
-public class DashboardActivity extends AppCompatActivity {
+public class DashboardActivity extends DrawerActivity {
 
     private Toolbar toolbar;
     private CollapsingToolbarLayout collapsingToolbar;
@@ -51,21 +63,68 @@ public class DashboardActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
 
         super.onCreate(savedInstanceState);
-        this.requestWindowFeature(Window.FEATURE_NO_TITLE);
         setContentView(R.layout.activity_dashboard);
+
+
+
         init();
 
 
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
+            Window w = getWindow(); // in Activity's onCreate() for instance
+            w.setFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_NAVIGATION, WindowManager.LayoutParams.FLAG_TRANSLUCENT_NAVIGATION);
+            w.setFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS, WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
+        }
 
-        toolbar = (Toolbar) findViewById(R.id.anim_toolbar);
         collapsingToolbar = (CollapsingToolbarLayout) findViewById(R.id.collapsing_toolbar);
         appBarLayout = (AppBarLayout) findViewById(R.id.appbar);
         recList = (RecyclerView) findViewById(R.id.scrollableview);
 
-        setSupportActionBar(toolbar);
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        setSupportActionBar((Toolbar) findViewById(R.id.toolbar_dashboard));
 
-//        collapsingToolbar.setTitle(getString(R.string.rich_pleasure_academy));
+
+        setDrawerTheme(
+                new DrawerTheme(this)
+                        .setBackgroundColorRes(R.color.window_background_3)
+                        .setTextColorPrimaryRes(R.color.text_color_primary_3)
+                        .setTextColorSecondaryRes(R.color.text_color_secondary_3)
+        );
+
+        addItems(new DrawerItem()
+                        .setTextPrimary(getString(R.string.lorem_ipsum_short))
+                        .setTextSecondary(getString(R.string.lorem_ipsum_long)),
+                new DrawerFragmentItem()
+                        .setFragment(new ListFragment())
+                        .setTextPrimary(getString(R.string.lorem_ipsum_medium)),
+                new DrawerFragmentItem()
+                        .setFragment(new Fragment())
+                        .setImage(ContextCompat.getDrawable(this, R.drawable.ic_flag_white))
+                        .setTextPrimary(getString(R.string.lorem_ipsum_short))
+                        .setTextSecondary(getString(R.string.lorem_ipsum_long))
+        );
+        setOnItemClickListener(new DrawerItem.OnItemClickListener() {
+            @Override
+            public void onClick(DrawerItem item, long id, int position) {
+                selectItem(position);
+                Toast.makeText(DashboardActivity.this, "Clicked item #" + position, Toast.LENGTH_SHORT).show();
+            }
+        });
+
+        addProfile(new DrawerProfile()
+                .setId(1)
+                .setRoundedAvatar((BitmapDrawable) ContextCompat.getDrawable(this, R.drawable.cat_2))
+                .setBackground(ContextCompat.getDrawable(this, R.drawable.cat_wide_1))
+                .setName(getString(R.string.lorem_ipsum_short))
+        );
+        addProfile(new DrawerProfile()
+                .setId(2)
+                .setRoundedAvatar((BitmapDrawable) ContextCompat.getDrawable(this, R.drawable.cat_1))
+                .setBackground(ContextCompat.getDrawable(this, R.drawable.cat_wide_2))
+                .setName(getString(R.string.lorem_ipsum_short))
+                .setDescription(getString(R.string.lorem_ipsum_medium))
+        );
+
+        collapsingToolbar.setTitle(getString(R.string.featured));
 
         LinearLayoutManager llm = new LinearLayoutManager(this);
         llm.setOrientation(LinearLayoutManager.VERTICAL);
@@ -112,6 +171,7 @@ public class DashboardActivity extends AppCompatActivity {
         Calendar cal = Calendar.getInstance();
         cal.add(Calendar.SECOND, 15);
         alarmManager.setExact(AlarmManager.RTC_WAKEUP, cal.getTimeInMillis(), broadcast);
+
     }
 
     @Override
@@ -174,7 +234,7 @@ public class DashboardActivity extends AppCompatActivity {
             public void run() {
                 handler.post(Update);
             }
-        }, 20000, 20000);
+        }, 200000, 200000);
     }
 
     public void gotoInbox(View view)

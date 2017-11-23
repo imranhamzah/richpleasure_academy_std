@@ -58,7 +58,7 @@
         android:layout_height="wrap_content"
         android:layout_margin="8dp"
         android:clickable="true"
-        app:srcCompat="@drawable/ic_add_32dp"
+        app:srcCompat="@drawable/com_facebook_close"
         app:backgroundTint="#f2405b"
         app:fabSize="normal"
         app:layout_anchor="@id/appbar"

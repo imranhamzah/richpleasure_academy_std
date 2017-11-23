@@ -94,4 +94,17 @@
     <string name="play_again">Play Again</string>
     <string name="inbox">Inbox</string>
     <string name="rich_pleasure_academy">Richpleasure Academy</string>
+    <string name="featured">FEATURED</string>
+
+    <string name="hello_world">Custom drawer implementation for Material design apps.\n\nMade by <b>Heinrich Reimer</b></string>
+    <string name="hello_world2">Example of using <i>DrawerFrameLayout</i> for the drawer.\nThis drawer has a custom max width of 250dp.\n\nCheck out the sample code on GitHub!</string>
+    <string name="hello_world3">Example of using <i>DrawerActivity</i> for the drawer.\nThis drawer shows theming and has a custom <i>Toolbar</i> set.\n\nVery simple ;)</string>
+    <string name="action_github">GitHub</string>
+    <string name="lorem_ipsum_short" translatable="false">Lorem ipsum</string>
+    <string name="lorem_ipsum_medium" translatable="false">Lorem ipsum dolor sit amet</string>
+    <string name="lorem_ipsum_long" translatable="false">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam</string>
+
+    <string name="drawer_frame_layout">DrawerFrameLayout</string>
+    <string name="drawer_activity">DrawerActivity</string>
+
 </resources>
