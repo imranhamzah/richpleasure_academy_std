@@ -39,6 +39,11 @@
         <activity
             android:name=".InboxActivity"
             android:label="@string/inbox"></activity>
+
+        <activity
+            android:name=".act.ActivitySample"
+            android:label="@string/profile">
+        </activity>
         <activity
             android:name=".DashboardActivity"
             android:label="@string/title_activity_dashboard"

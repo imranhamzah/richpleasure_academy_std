@@ -41,6 +41,7 @@ import java.util.Calendar;
 import java.util.Timer;
 import java.util.TimerTask;
 
+import academy.richpleasure.richpleasureacademy.act.ActivitySample;
 import me.relex.circleindicator.CircleIndicator;
 
 public class DashboardActivity extends DrawerActivity {
@@ -90,6 +91,8 @@ public class DashboardActivity extends DrawerActivity {
         );
 */
         addItems(new DrawerItem()
+                        .setTextPrimary(getString(R.string.profile)),
+                new DrawerItem()
                         .setTextPrimary(getString(R.string.inbox)),
                 new DrawerItem()
                         .setTextPrimary(getString(R.string.subjects)),
@@ -104,13 +107,17 @@ public class DashboardActivity extends DrawerActivity {
                 selectItem(position);
                 if(position==0)
                 {
+                    Intent i = new Intent(getApplicationContext(),ActivitySample.class);
+                    startActivity(i);
+                }else if(position==1)
+                {
                     Intent i = new Intent(getApplicationContext(),InboxActivity.class);
                     startActivity(i);
-                }else if(position == 1)
+                }else if(position == 2)
                 {
                     Intent i = new Intent(getApplicationContext(), SubjectListActivity.class);
                     startActivity(i);
-                }else if(position == 2)
+                }else if(position == 3)
                 {
                     Intent i = new Intent(getApplicationContext(), LoginActivity.class);
                     startActivity(i);

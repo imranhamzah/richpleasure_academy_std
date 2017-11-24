@@ -112,5 +112,6 @@
     <string name="reset">Reset</string>
     <string name="search">Search</string>
     <string name="inbox">Inbox</string>
+    <string name="profile">Profile</string>
 
 </resources>

@@ -6,9 +6,7 @@ import android.support.v7.app.AppCompatActivity;
 import academy.richpleasure.richpleasureacademy.R;
 import academy.richpleasure.richpleasureacademy.helper.SampleHelper;
 
-/**
- *
- */
+
 public class ActivitySample extends AppCompatActivity {
 
     @Override
@@ -16,6 +14,15 @@ public class ActivitySample extends AppCompatActivity {
         super.onCreate(savedInstanceState);
 
         setContentView(R.layout.profile_tutor);
+
+        getSupportActionBar().setHomeButtonEnabled(true);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         SampleHelper.with(this).init().loadAbout();
+    }
+
+    @Override
+    public boolean onSupportNavigateUp() {
+        onBackPressed();
+        return true;
     }
 }
