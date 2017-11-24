@@ -92,7 +92,6 @@
 
     <string name="play_again_desc">To see the welcome slider again, goto Settings -> apps -> welcome slider -> clear data</string>
     <string name="play_again">Play Again</string>
-    <string name="inbox">Inbox</string>
     <string name="rich_pleasure_academy">Richpleasure Academy</string>
     <string name="featured">FEATURED</string>
 
@@ -109,5 +108,9 @@
     <string name="billing">Billing</string>
     <string name="title_activity_subject_list">SubjectList</string>
     <string name="subject_list">Subject List</string>
+    <string name="add">add</string>
+    <string name="reset">Reset</string>
+    <string name="search">Search</string>
+    <string name="inbox">Inbox</string>
 
 </resources>

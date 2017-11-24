@@ -186,24 +186,21 @@ public class DashboardActivity extends DrawerActivity {
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.menu_main, menu);
-        this.collapseMenu = menu;
         return true;
     }
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()){
-            case android.R.id.home:
+            case R.id.search:
                 finish();
                 break;
-            case R.id.action_settings:
-                Toast.makeText(this, "Setting menu clicked!", Toast.LENGTH_SHORT).show();
+            case R.id.inbox:
+                Intent inbox = new Intent(getApplicationContext(),InboxActivity.class);
+                startActivity(inbox);
                 break;
         }
-
-        if(item.getTitle() == "Add"){
-            Toast.makeText(this, "Add menu clicked!", Toast.LENGTH_SHORT).show();
-        }
+        
         return super.onOptionsItemSelected(item);
     }
 
