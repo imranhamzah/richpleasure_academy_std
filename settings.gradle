@@ -1,1 +1,1 @@
-include ':app', ':placeholderview2', ':library'
+include ':app', ':placeholderview2', ':library', ':profile-lib'
