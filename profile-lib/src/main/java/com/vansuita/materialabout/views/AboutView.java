@@ -6,6 +6,7 @@ import android.graphics.Bitmap;
 import android.graphics.Color;
 import android.graphics.drawable.Drawable;
 import android.graphics.drawable.GradientDrawable;
+import android.graphics.drawable.Icon;
 import android.graphics.drawable.LayerDrawable;
 import android.os.Handler;
 import android.support.v7.widget.CardView;
@@ -19,12 +20,12 @@ import android.widget.ImageView;
 import android.widget.ScrollView;
 import android.widget.TextView;
 
-import com.vansuita.library.Icon;
 import com.vansuita.materialabout.R;
 import com.vansuita.materialabout.builder.AboutBuilder;
 import com.vansuita.materialabout.builder.Item;
 import com.vansuita.materialabout.util.RippleUtil;
 import com.vansuita.materialabout.util.VisibleUtil;
+
 
 /**
  * Created by jrvansuita on 10/02/17.
@@ -245,7 +246,7 @@ public final class AboutView extends FrameLayout {
         TextView tvLabel = (TextView) view.findViewById(R.id.label);
         ImageView ivIcon = (ImageView) view.findViewById(R.id.icon);
 
-        Icon.on(ivIcon).bitmap(item.getIcon()).color(getIconColor()).put();
+//        Icon.on(ivIcon).bitmap(item.getIcon()).color(getIconColor()).put();
 
         tvLabel.setText(item.getLabel());
         view.setOnClickListener(item.getOnClick());

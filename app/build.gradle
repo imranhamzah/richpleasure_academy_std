@@ -47,6 +47,7 @@ dependencies {
         exclude group: 'com.android.support', module: 'support-annotations'
     })
 
+    compile 'com.github.jrvansuita:IconHandler:+'
     compile 'com.github.bumptech.glide:glide:3.7.0'
     compile 'me.relex:circleindicator:1.2.2@aar'
     compile 'com.github.bumptech.glide:glide:3.7.0'
@@ -68,4 +69,6 @@ dependencies {
     compile project(path: ':placeholderview2')
     compile 'com.android.support:palette-v7:25.3.1'
     compile 'com.heinrichreimersoftware:material-drawer:2.3.3'
+    compile project(path: ':profile-lib')
+    compile project(path: ':library')
 }
