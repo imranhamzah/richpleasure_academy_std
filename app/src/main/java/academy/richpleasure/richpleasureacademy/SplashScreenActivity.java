@@ -10,9 +10,6 @@ import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 
-import java.util.Timer;
-import java.util.TimerTask;
-
 public class SplashScreenActivity extends Activity {
 
     public void onAttachedToWindow() {
@@ -41,14 +38,15 @@ public class SplashScreenActivity extends Activity {
         iv.startAnimation(anim);
 
 
-        Timer swipeTimer = new Timer();
-        swipeTimer.schedule(new TimerTask() {
-            @Override
-            public void run() {
-                Intent welcome = new Intent(getApplicationContext(),WelcomeActivity.class);
-                startActivity(welcome);
-            }
-        }, 4000, 4000);
+        new android.os.Handler().postDelayed(
+                new Runnable() {
+                    public void run() {
+                        Intent welcome = new Intent(getApplicationContext(),WelcomeActivity.class);
+                        startActivity(welcome);
+                    }
+                },
+                4500);
+
 
     }
 
