@@ -47,11 +47,20 @@
         </android.support.design.widget.CollapsingToolbarLayout>
     </android.support.design.widget.AppBarLayout>
 
+    <com.mindorks.placeholderview.InfinitePlaceHolderView
+        android:id="@+id/loadMoreViewDashboard"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"
+        />
+<!--
+
     <android.support.v7.widget.RecyclerView
         android:id="@+id/scrollableview"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         app:layout_behavior="@string/appbar_scrolling_view_behavior" />
+-->
 
     <android.support.design.widget.FloatingActionButton
         android:layout_width="wrap_content"

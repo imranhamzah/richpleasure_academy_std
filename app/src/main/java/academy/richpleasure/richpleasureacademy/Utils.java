@@ -24,9 +24,6 @@ import java.util.List;
 import academy.richpleasure.richpleasureacademy.feed.data.Feed;
 import academy.richpleasure.richpleasureacademy.infinite.InfiniteFeedInfo;
 
-/**
- * Created by janisharali on 21/08/16.
- */
 public class Utils {
 
     private static final String TAG = "Utils";

@@ -9,6 +9,7 @@ import android.graphics.BitmapFactory;
 import android.graphics.drawable.BitmapDrawable;
 import android.os.Build;
 import android.os.Bundle;
+import android.os.Looper;
 import android.support.design.widget.AppBarLayout;
 import android.support.design.widget.CollapsingToolbarLayout;
 import android.support.v4.app.Fragment;
@@ -17,8 +18,9 @@ import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.graphics.Palette;
 import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
+//import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -35,20 +37,30 @@ import com.heinrichreimersoftware.materialdrawer.structure.DrawerFragmentItem;
 import com.heinrichreimersoftware.materialdrawer.structure.DrawerItem;
 import com.heinrichreimersoftware.materialdrawer.structure.DrawerProfile;
 import com.heinrichreimersoftware.materialdrawer.theme.DrawerTheme;
+import com.mindorks.butterknifelite.ButterKnifeLite;
+import com.mindorks.placeholderview.InfinitePlaceHolderView;
 
 import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.Comparator;
+import java.util.List;
 import java.util.Timer;
 import java.util.TimerTask;
 
 import academy.richpleasure.richpleasureacademy.act.ActivitySample;
+import academy.richpleasure.richpleasureacademy.infinite.InfiniteFeedInfo;
+import academy.richpleasure.richpleasureacademy.infinite.ItemView;
+import academy.richpleasure.richpleasureacademy.infinite.LoadMoreView;
 import me.relex.circleindicator.CircleIndicator;
 
 public class DashboardActivity extends DrawerActivity {
 
+    @com.mindorks.butterknifelite.annotations.BindView(R.id.loadMoreViewDashboard)
+    private InfinitePlaceHolderView mLoadMoreView;
+
     private CollapsingToolbarLayout collapsingToolbar;
     private AppBarLayout appBarLayout;
-    private RecyclerView recList;
+//    private RecyclerView recList;
     private Menu collapseMenu;
 
     private boolean appBarExpanded = true;
@@ -63,7 +75,10 @@ public class DashboardActivity extends DrawerActivity {
     protected void onCreate(Bundle savedInstanceState) {
 
         super.onCreate(savedInstanceState);
+
+
         setContentView(R.layout.activity_dashboard);
+        ButterKnifeLite.bind(this);
 
 
 
@@ -78,7 +93,7 @@ public class DashboardActivity extends DrawerActivity {
 
         collapsingToolbar = (CollapsingToolbarLayout) findViewById(R.id.collapsing_toolbar);
         appBarLayout = (AppBarLayout) findViewById(R.id.appbar);
-        recList = (RecyclerView) findViewById(R.id.scrollableview);
+//        recList = (RecyclerView) findViewById(R.id.scrollableview);
 
         setSupportActionBar((Toolbar) findViewById(R.id.anim_toolbar));
 
@@ -144,10 +159,10 @@ public class DashboardActivity extends DrawerActivity {
 
         LinearLayoutManager llm = new LinearLayoutManager(this);
         llm.setOrientation(LinearLayoutManager.VERTICAL);
-        recList.setLayoutManager(llm);
+//        recList.setLayoutManager(llm);
 
         DessertAdapter adapter = new DessertAdapter();
-        recList.setAdapter(adapter);
+//        recList.setAdapter(adapter);
 
 
 
@@ -188,6 +203,7 @@ public class DashboardActivity extends DrawerActivity {
         cal.add(Calendar.SECOND, 15);
         alarmManager.setExact(AlarmManager.RTC_WAKEUP, cal.getTimeInMillis(), broadcast);
 
+        setupView();
     }
 
     @Override
@@ -254,5 +270,33 @@ public class DashboardActivity extends DrawerActivity {
     {
         Intent inbox = new Intent(getApplicationContext(),InboxActivity.class);
         startActivity(inbox);
+    }
+
+    private void setupView(){
+
+        List<InfiniteFeedInfo> feedList = Utils.loadInfiniteFeeds(this.getApplicationContext());
+        mLoadMoreView.setLoadMoreResolver(new LoadMoreView(mLoadMoreView, feedList));
+        Log.d("DEBUG", "LoadMoreView.LOAD_VIEW_SET_COUNT " + LoadMoreView.LOAD_VIEW_SET_COUNT);
+        for(int i = 0; i < LoadMoreView.LOAD_VIEW_SET_COUNT; i++){
+            mLoadMoreView.addView(new ItemView(this.getApplicationContext(), feedList.get(i)));
+        }
+
+        // Testing the sorting
+        new Handler(Looper.getMainLooper()).postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                mLoadMoreView.sort(new Comparator<Object>() {
+                    @Override
+                    public int compare(Object o1, Object o2) {
+                        if (o1 instanceof ItemView && o2 instanceof ItemView) {
+                            ItemView view1 = (ItemView) o1;
+                            ItemView view2 = (ItemView) o2;
+                            return view1.getInfo().getTitle().compareTo(view2.getInfo().getTitle());
+                        }
+                        return 0;
+                    }
+                });
+            }
+        }, 8000);
     }
 }
