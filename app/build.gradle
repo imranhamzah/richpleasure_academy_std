@@ -72,4 +72,6 @@ dependencies {
     compile project(path: ':profile-lib')
     compile project(path: ':library')
     compile 'com.github.ViksaaSkool:AwesomeSplash:v1.0.0'
+    compile 'com.miguelcatalan:materialsearchview:1.4.0'
+
 }
