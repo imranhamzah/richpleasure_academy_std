@@ -48,7 +48,7 @@ public class SplashScreenActivity extends Activity {
                 Intent welcome = new Intent(getApplicationContext(),WelcomeActivity.class);
                 startActivity(welcome);
             }
-        }, 3000, 3000);
+        }, 4000, 4000);
 
     }
 
