@@ -159,7 +159,7 @@ public class DashboardActivity extends DrawerActivity {
                 .setDescription(getString(R.string.lorem_ipsum_medium))
         );
 
-        collapsingToolbar.setTitle(getString(R.string.featured));
+//        collapsingToolbar.setTitle(getString(R.string.featured));
 
         LinearLayoutManager llm = new LinearLayoutManager(this);
         llm.setOrientation(LinearLayoutManager.VERTICAL);
