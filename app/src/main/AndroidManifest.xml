@@ -23,11 +23,6 @@
         <activity
             android:name=".WelcomeActivity"
             android:theme="@style/AppTheme.NoActionBar">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
         <activity
             android:name=".LoginActivity"
@@ -38,12 +33,10 @@
             android:label="@string/app_name" />
         <activity
             android:name=".InboxActivity"
-            android:label="@string/inbox"></activity>
-
+            android:label="@string/inbox" />
         <activity
             android:name=".act.ActivitySample"
-            android:label="@string/profile">
-        </activity>
+            android:label="@string/profile"></activity>
         <activity
             android:name=".DashboardActivity"
             android:label="@string/title_activity_dashboard"
@@ -69,6 +62,14 @@
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </receiver>
+
+        <activity android:name=".SplashScreenActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
     </application>
 
 </manifest>

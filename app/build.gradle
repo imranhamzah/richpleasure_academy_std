@@ -71,4 +71,5 @@ dependencies {
     compile 'com.heinrichreimersoftware:material-drawer:2.3.3'
     compile project(path: ':profile-lib')
     compile project(path: ':library')
+    compile 'com.github.ViksaaSkool:AwesomeSplash:v1.0.0'
 }
