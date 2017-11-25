@@ -214,6 +214,7 @@ public class DashboardActivity extends DrawerActivity {
     private void setSearchView()
     {
         searchView = (MaterialSearchView) findViewById(R.id.search_view);
+        searchView.bringToFront();
         searchView.setCursorDrawable(R.drawable.custom_cursor);
         searchView.setSuggestions(getResources().getStringArray(R.array.query_suggestions));
         searchView.setOnQueryTextListener(new MaterialSearchView.OnQueryTextListener() {

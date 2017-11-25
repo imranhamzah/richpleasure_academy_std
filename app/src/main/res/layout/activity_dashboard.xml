@@ -38,6 +38,15 @@
                     android:layout_alignParentBottom="true"/>
             </RelativeLayout>
 
+
+            <com.miguelcatalan.materialsearchview.MaterialSearchView
+                android:id="@+id/search_view"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                app:layout_collapseMode="pin"
+                app:layout_behavior="@string/appbar_scrolling_view_behavior"
+                />
+
             <android.support.v7.widget.Toolbar
                 android:id="@+id/anim_toolbar"
                 android:layout_width="match_parent"
@@ -46,14 +55,8 @@
                 app:popupTheme="@style/ThemeOverlay.AppCompat.Light" />
         </android.support.design.widget.CollapsingToolbarLayout>
 
-        <com.miguelcatalan.materialsearchview.MaterialSearchView
-            android:id="@+id/search_view"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:visibility="gone"
-            />
-
     </android.support.design.widget.AppBarLayout>
+
 
     <com.mindorks.placeholderview.InfinitePlaceHolderView
         android:id="@+id/loadMoreViewDashboard"
