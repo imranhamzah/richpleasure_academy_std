@@ -207,8 +207,8 @@ public class DashboardActivity extends DrawerActivity {
         cal.add(Calendar.SECOND, 15);
         alarmManager.setExact(AlarmManager.RTC_WAKEUP, cal.getTimeInMillis(), broadcast);
 
-//        setupView();
-        setupSubjectView();
+        setupView();
+//        setupSubjectView();
         setSearchView();
     }
 

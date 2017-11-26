@@ -58,13 +58,18 @@
     </android.support.design.widget.AppBarLayout>
 
 
-    <com.mindorks.placeholderview.InfinitePlaceHolderView
-        android:id="@+id/loadMoreViewDashboard"
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:orientation="vertical"
         app:layout_behavior="@string/appbar_scrolling_view_behavior"
-        />
-
+        >
+        <com.mindorks.placeholderview.InfinitePlaceHolderView
+            android:id="@+id/loadMoreViewDashboard"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            />
+    </LinearLayout>
 
     <android.support.design.widget.FloatingActionButton
         android:layout_width="wrap_content"
