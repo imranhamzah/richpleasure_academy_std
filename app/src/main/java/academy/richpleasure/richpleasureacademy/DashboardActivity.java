@@ -207,7 +207,8 @@ public class DashboardActivity extends DrawerActivity {
         cal.add(Calendar.SECOND, 15);
         alarmManager.setExact(AlarmManager.RTC_WAKEUP, cal.getTimeInMillis(), broadcast);
 
-        setupView();
+//        setupView();
+        setupSubjectView();
         setSearchView();
     }
 
@@ -359,6 +360,34 @@ public class DashboardActivity extends DrawerActivity {
                             ItemView view1 = (ItemView) o1;
                             ItemView view2 = (ItemView) o2;
                             return view1.getInfo().getTitle().compareTo(view2.getInfo().getTitle());
+                        }
+                        return 0;
+                    }
+                });
+            }
+        }, 8000);
+    }
+
+    private void setupSubjectView(){
+
+        List<SubjectListInfo> subjectList = Utils.loadInfiniteSubjects(this.getApplicationContext());
+        mLoadMoreView.setLoadMoreResolver(new LoadMoreSubjectView(mLoadMoreView, subjectList));
+        Log.d("DEBUG", "LoadMoreView.LOAD_VIEW_SET_COUNT " + LoadMoreSubjectView.LOAD_VIEW_SET_COUNT);
+        for(int i = 0; i < LoadMoreView.LOAD_VIEW_SET_COUNT; i++){
+            mLoadMoreView.addView(new SubjectItemView(this.getApplicationContext(), subjectList.get(i)));
+        }
+
+        // Testing the sorting
+        new Handler(Looper.getMainLooper()).postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                mLoadMoreView.sort(new Comparator<Object>() {
+                    @Override
+                    public int compare(Object o1, Object o2) {
+                        if (o1 instanceof ItemView && o2 instanceof ItemView) {
+                            SubjectItemView view1 = (SubjectItemView) o1;
+                            SubjectItemView view2 = (SubjectItemView) o2;
+                            return view1.getInfo().getSubject_title().compareTo(view2.getInfo().getSubject_title());
                         }
                         return 0;
                     }

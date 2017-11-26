@@ -81,6 +81,23 @@ public class Utils {
             return null;
         }
     }
+    public static List<SubjectListInfo> loadInfiniteSubjects(Context context){
+        try{
+            GsonBuilder builder = new GsonBuilder();
+            Gson gson = builder.create();
+            JSONArray array = new JSONArray(loadJSONFromAsset(context, "infinite_subjects.json"));
+            List<SubjectListInfo> subjectList = new ArrayList<>();
+            for(int i=0;i<array.length();i++){
+                SubjectListInfo subject = gson.fromJson(array.getString(i), SubjectListInfo.class);
+                subjectList.add(subject);
+            }
+            return subjectList;
+        }catch (Exception e){
+            Log.d(TAG,"seedGames parseException " + e);
+            e.printStackTrace();
+            return null;
+        }
+    }
 
     private static String loadJSONFromAsset(Context context, String jsonFileName) {
         String json = null;

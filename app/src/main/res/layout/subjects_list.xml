@@ -11,7 +11,7 @@
 
     <android.support.v7.widget.CardView
         android:layout_width="100dp"
-        android:layout_height="200dp"
+        android:layout_height="150dp"
         >
 
         <LinearLayout
@@ -20,7 +20,7 @@
             android:orientation="vertical">
 
             <ImageView
-                android:id="@+id/imageView2"
+                android:id="@+id/subjectImage"
                 android:layout_width="100dp"
                 android:layout_height="100dp"
                 app:srcCompat="@drawable/cat_2"
@@ -32,22 +32,17 @@
                 android:layout_height="match_parent"
                 android:layout_margin="2dp"
                 >
+
                 <TextView
-                    android:id="@+id/textView2"
+                    android:id="@+id/subjectTitle"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="10dp"
                     android:text="TextView"
                     android:textSize="10sp"
-                    tools:text="Build Websites from scratch with HTML  CSS" />
+                    tools:text="Matematik Tambahan Form 4" />
 
-                <TextView
-                    android:id="@+id/textView3"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="70dp"
-                    android:textSize="10sp"
-                    android:text="MYR 70/hr" />
+
             </FrameLayout>
 
         </LinearLayout>
