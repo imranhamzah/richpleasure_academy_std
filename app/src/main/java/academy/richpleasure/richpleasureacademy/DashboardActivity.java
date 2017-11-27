@@ -13,13 +13,9 @@ import android.os.Looper;
 import android.speech.RecognizerIntent;
 import android.support.design.widget.AppBarLayout;
 import android.support.design.widget.CollapsingToolbarLayout;
-import android.support.v4.app.Fragment;
-import android.support.v4.app.ListFragment;
 import android.support.v4.content.ContextCompat;
-import android.support.v7.app.AppCompatActivity;
 import android.support.v7.graphics.Palette;
 import android.support.v7.widget.LinearLayoutManager;
-//import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.text.TextUtils;
 import android.util.Log;
@@ -28,17 +24,13 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.Window;
 
-import android.os.Bundle;
 import android.os.Handler;
 import android.support.v4.view.ViewPager;
 import android.view.WindowManager;
-import android.widget.Toast;
 
 import com.heinrichreimersoftware.materialdrawer.DrawerActivity;
-import com.heinrichreimersoftware.materialdrawer.structure.DrawerFragmentItem;
 import com.heinrichreimersoftware.materialdrawer.structure.DrawerItem;
 import com.heinrichreimersoftware.materialdrawer.structure.DrawerProfile;
-import com.heinrichreimersoftware.materialdrawer.theme.DrawerTheme;
 import com.miguelcatalan.materialsearchview.MaterialSearchView;
 import com.mindorks.butterknifelite.ButterKnifeLite;
 import com.mindorks.placeholderview.InfinitePlaceHolderView;
@@ -63,7 +55,6 @@ public class DashboardActivity extends DrawerActivity {
 
     private CollapsingToolbarLayout collapsingToolbar;
     private AppBarLayout appBarLayout;
-//    private RecyclerView recList;
     private Menu collapseMenu;
 
     private boolean appBarExpanded = true;

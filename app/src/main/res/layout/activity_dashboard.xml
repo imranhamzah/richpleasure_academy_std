@@ -59,7 +59,6 @@
 
     </android.support.design.widget.AppBarLayout>
 
-
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -69,7 +68,7 @@
 
         <com.mindorks.placeholderview.InfinitePlaceHolderView
             android:id="@+id/loadMoreViewDashboard"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent" />
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
     </LinearLayout>
 </android.support.design.widget.CoordinatorLayout>
