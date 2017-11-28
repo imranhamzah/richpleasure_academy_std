@@ -107,6 +107,8 @@ public class DashboardActivity extends DrawerActivity {
                 new DrawerItem()
                         .setTextPrimary(getString(R.string.subjects)),
                 new DrawerItem()
+                        .setTextPrimary(getString(R.string.tutors)),
+                new DrawerItem()
                         .setTextPrimary(getString(R.string.logout)),
                 new DrawerItem()
                         .setTextPrimary(getString(R.string.billing))
@@ -125,9 +127,13 @@ public class DashboardActivity extends DrawerActivity {
                     startActivity(i);
                 }else if(position == 2)
                 {
-                    Intent i = new Intent(getApplicationContext(), SubjectListActivity.class);
+                    Intent i = new Intent(getApplicationContext(), SubjectListDetails.class);
                     startActivity(i);
                 }else if(position == 3)
+                {
+                    Intent i = new Intent(getApplicationContext(), TutorListActivity.class);
+                    startActivity(i);
+                }else if(position == 4)
                 {
                     Intent i = new Intent(getApplicationContext(), LoginActivity.class);
                     startActivity(i);

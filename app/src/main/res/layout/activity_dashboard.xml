@@ -59,16 +59,107 @@
 
     </android.support.design.widget.AppBarLayout>
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="horizontal"
-        app:layout_behavior="@string/appbar_scrolling_view_behavior"
-        >
 
-        <com.mindorks.placeholderview.InfinitePlaceHolderView
-            android:id="@+id/loadMoreViewDashboard"
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="5dp"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+        <TextView
+            android:id="@+id/textMySubjects"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
-    </LinearLayout>
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/my_subjects" />
+
+        <HorizontalScrollView
+            android:id="@+id/scrollMySubjects"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/textMySubjects"
+            android:scrollbars="none">
+
+            <LinearLayout
+                android:id="@+id/mySubjectList"
+                android:layout_width="400dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/textMySubjects"
+                android:orientation="horizontal">
+
+
+                <Button
+                    android:id="@+id/button4"
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Button" />
+
+                <Button
+                    android:id="@+id/button3"
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Button" />
+
+                <Button
+                    android:id="@+id/button2"
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Button" />
+
+                <Button
+                    android:id="@+id/button5"
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Button" />
+
+                <Button
+                    android:id="@+id/button6"
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Button" />
+
+
+            </LinearLayout>
+        </HorizontalScrollView>
+
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+        </ScrollView>
+        <TextView
+            android:id="@+id/textOtherSubjects"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/scrollMySubjects"
+            android:layout_weight="1"
+            android:text="@string/other_subjects" />
+
+
+            <LinearLayout
+                android:id="@+id/otherSubjectList"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/textOtherSubjects"
+                android:orientation="horizontal">
+
+                <com.mindorks.placeholderview.InfinitePlaceHolderView
+                    android:id="@+id/loadMoreViewDashboard"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:reverseLayout="true"
+                    android:divider="@null"
+                    android:orientation="horizontal"
+                    />
+
+            </LinearLayout>
+    </RelativeLayout>
+
+
 </android.support.design.widget.CoordinatorLayout>

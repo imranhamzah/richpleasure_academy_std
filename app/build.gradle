@@ -73,5 +73,7 @@ dependencies {
     compile project(path: ':library')
     compile 'com.github.ViksaaSkool:AwesomeSplash:v1.0.0'
     compile 'com.miguelcatalan:materialsearchview:1.4.0'
+    compile 'com.jaeger.ninegridimageview:library:1.1.1'
+    compile 'com.squareup.picasso:picasso:2.5.2'
 
 }

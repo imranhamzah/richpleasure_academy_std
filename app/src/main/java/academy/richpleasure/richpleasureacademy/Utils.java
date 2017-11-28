@@ -23,6 +23,7 @@ import java.util.List;
 
 import academy.richpleasure.richpleasureacademy.feed.data.Feed;
 import academy.richpleasure.richpleasureacademy.infinite.InfiniteFeedInfo;
+import academy.richpleasure.richpleasureacademy.infinite.InfiniteTutorInfo;
 
 public class Utils {
 
@@ -81,6 +82,24 @@ public class Utils {
             return null;
         }
     }
+    public static List<InfiniteTutorInfo> loadInfiniteTutorFeeds(Context context){
+        try{
+            GsonBuilder builder = new GsonBuilder();
+            Gson gson = builder.create();
+            JSONArray array = new JSONArray(loadJSONFromAsset(context, "infinite_tutors.json"));
+            List<InfiniteTutorInfo> feedTutorList = new ArrayList<>();
+            for(int i=0;i<array.length();i++){
+                InfiniteTutorInfo feed = gson.fromJson(array.getString(i), InfiniteTutorInfo.class);
+                feedTutorList.add(feed);
+            }
+            return feedTutorList;
+        }catch (Exception e){
+            Log.d(TAG,"seedGames parseException " + e);
+            e.printStackTrace();
+            return null;
+        }
+    }
+
     public static List<SubjectListInfo> loadInfiniteSubjects(Context context){
         try{
             GsonBuilder builder = new GsonBuilder();
