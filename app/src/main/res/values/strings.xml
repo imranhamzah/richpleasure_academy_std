@@ -115,6 +115,7 @@
     <string name="profile">Profile</string>
     <string name="my_subjects">My Subjects</string>
     <string name="other_subjects">Other Subjects</string>
+    <string name="chapter_list">Chapter List</string>
 
     <string-array name="query_suggestions">
         <item>Android</item>

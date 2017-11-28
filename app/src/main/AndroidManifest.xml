@@ -73,7 +73,9 @@
             android:name=".SubjectListDetails"
             android:label="@string/subject_list" />
         <activity android:name=".TutorListActivity" />
-        <activity android:name=".ChapterListActivity"></activity>
+        <activity android:name=".ChapterListActivity"
+            android:label="@string/chapter_list"
+            ></activity>
     </application>
 
 </manifest>

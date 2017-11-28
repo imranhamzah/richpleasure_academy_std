@@ -31,7 +31,9 @@ public class ChapterAdapter extends RecyclerView.Adapter<ChapterAdapter.ChapterV
 
     @Override
     public void onBindViewHolder(ChapterViewHolder holder, int position) {
-
+        Chapters chapters = chaptersList.get(position);
+        holder.chapterTitle.setText(chapters.getChapter_title());
+        holder.chapterCurrentProgress.setText(chapters.getChapter_current_progress());
     }
 
     @Override
@@ -47,6 +49,8 @@ public class ChapterAdapter extends RecyclerView.Adapter<ChapterAdapter.ChapterV
             super(itemView);
 
             chapterIcon = (ImageView) itemView.findViewById(R.id.chapterIcon);
+            chapterTitle = (TextView) itemView.findViewById(R.id.chapterTitle);
+            chapterCurrentProgress = (TextView) itemView.findViewById(R.id.chapterCurrentProgress);
         }
     }
 }

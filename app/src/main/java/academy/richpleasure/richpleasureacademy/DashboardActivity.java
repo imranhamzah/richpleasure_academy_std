@@ -396,4 +396,10 @@ public class DashboardActivity extends DrawerActivity {
             }
         }, 8000);
     }
+
+    public void gotoChapterList(View view)
+    {
+        Intent gotoChapter = new Intent(getApplicationContext(),ChapterListActivity.class);
+        startActivity(gotoChapter);
+    }
 }

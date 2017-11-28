@@ -35,6 +35,8 @@ public class InfinitePlaceHolderView extends PlaceHolderView {
         super(context, attrs, defStyle);
     }
 
+
+
     private void setLoadMoreListener() {
         mOnScrollListener =
                 new PlaceHolderView.OnScrollListener() {

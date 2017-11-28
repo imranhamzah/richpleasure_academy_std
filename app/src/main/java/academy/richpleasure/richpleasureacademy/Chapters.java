@@ -5,10 +5,21 @@ package academy.richpleasure.richpleasureacademy;
  */
 
 public class Chapters {
+
     private String chapter_title;
+
+    public Chapters(String chapter_title, String chapter_current_progress, String chapter_id, String subject_id) {
+        this.chapter_title = chapter_title;
+        this.chapter_current_progress = chapter_current_progress;
+        this.chapter_id = chapter_id;
+        this.subject_id = subject_id;
+    }
+
     private String chapter_current_progress;
     private String chapter_id;
     private String subject_id;
+
+
 
     public String getChapter_title() {
         return chapter_title;
