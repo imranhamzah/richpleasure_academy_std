@@ -81,11 +81,13 @@ public class DashboardActivity extends DrawerActivity {
         ButterKnifeLite.bind(this);
 
         RecyclerView recyclerView = (RecyclerView) mLoadMoreView;
+        recyclerView.setNestedScrollingEnabled(false);
         RecyclerView.LayoutManager layoutManager = recyclerView.getLayoutManager();
         LinearLayoutManager linearLayoutManager = (LinearLayoutManager) layoutManager;
         linearLayoutManager.setOrientation(LinearLayoutManager.HORIZONTAL);
 
         RecyclerView recyclerViewTutors = (RecyclerView) mLoadMoreViewTutors;
+        recyclerViewTutors.setNestedScrollingEnabled(false);
         RecyclerView.LayoutManager layoutManagerTutors = recyclerViewTutors.getLayoutManager();
         LinearLayoutManager linearLayoutManagerTutors = (LinearLayoutManager) layoutManagerTutors;
         linearLayoutManagerTutors.setOrientation(LinearLayoutManager.HORIZONTAL);

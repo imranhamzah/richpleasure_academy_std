@@ -60,66 +60,71 @@
     </android.support.design.widget.AppBarLayout>
 
 
-    <LinearLayout
+    <android.support.v4.widget.NestedScrollView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:padding="5dp"
         app:layout_behavior="@string/appbar_scrolling_view_behavior">
 
-        <TextView
-            android:id="@+id/textOtherSubjects"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="@string/subjects" />
-
-
         <LinearLayout
-            android:id="@+id/subjectList"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@id/textOtherSubjects"
-            android:layout_marginBottom="20dp"
-            android:orientation="horizontal">
+            android:orientation="vertical"
+            android:padding="5dp">
 
-            <com.mindorks.placeholderview.InfinitePlaceHolderView
-                android:id="@+id/loadMoreViewDashboard"
+            <TextView
+                android:id="@+id/textOtherSubjects"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:divider="@null"
-                android:orientation="horizontal"
-                app:reverseLayout="true" />
+                android:layout_weight="1"
+                android:text="@string/subjects" />
 
-        </LinearLayout>
 
-        <TextView
-            android:id="@+id/textTutors"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="@string/tutors"
-            android:layout_marginBottom="5dp"
-            />
+            <LinearLayout
+                android:id="@+id/subjectList"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/textOtherSubjects"
+                android:layout_marginBottom="20dp"
+                android:orientation="horizontal">
 
-        <LinearLayout
-            android:id="@+id/tutorList"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/textOtherSubjects"
-            android:orientation="horizontal">
+                <com.mindorks.placeholderview.InfinitePlaceHolderView
+                    android:id="@+id/loadMoreViewDashboard"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:divider="@null"
+                    android:orientation="horizontal"
+                    app:reverseLayout="true" />
 
-            <com.mindorks.placeholderview.InfinitePlaceHolderView
-                android:id="@+id/loadMoreTutorView"
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/textTutors"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:divider="@null"
-                android:orientation="horizontal"
-                app:reverseLayout="true" />
+                android:layout_marginBottom="5dp"
+                android:layout_weight="1"
+                android:text="@string/tutors" />
+
+            <LinearLayout
+                android:id="@+id/tutorList"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/textOtherSubjects"
+                android:orientation="horizontal">
+
+                <com.mindorks.placeholderview.InfinitePlaceHolderView
+                    android:id="@+id/loadMoreTutorView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:divider="@null"
+                    android:orientation="horizontal"
+                    app:reverseLayout="true" />
+
+            </LinearLayout>
 
         </LinearLayout>
-
-    </LinearLayout>
+    </android.support.v4.widget.NestedScrollView>
 
 
 </android.support.design.widget.CoordinatorLayout>
