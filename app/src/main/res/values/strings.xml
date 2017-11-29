@@ -113,8 +113,6 @@
     <string name="search">Search</string>
     <string name="inbox">Inbox</string>
     <string name="profile">Profile</string>
-    <string name="my_subjects">My Subjects</string>
-    <string name="other_subjects">Other Subjects</string>
     <string name="chapter_list">Chapter List</string>
 
     <string-array name="query_suggestions">

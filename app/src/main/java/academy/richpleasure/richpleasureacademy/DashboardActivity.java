@@ -48,12 +48,16 @@ import academy.richpleasure.richpleasureacademy.act.ActivitySample;
 import academy.richpleasure.richpleasureacademy.infinite.InfiniteFeedInfo;
 import academy.richpleasure.richpleasureacademy.infinite.ItemView;
 import academy.richpleasure.richpleasureacademy.infinite.LoadMoreView;
+import butterknife.BindView;
 import me.relex.circleindicator.CircleIndicator;
 
 public class DashboardActivity extends DrawerActivity {
 
     @com.mindorks.butterknifelite.annotations.BindView(R.id.loadMoreViewDashboard)
     private InfinitePlaceHolderView mLoadMoreView;
+
+    @com.mindorks.butterknifelite.annotations.BindView(R.id.loadMoreTutorView)
+    private InfinitePlaceHolderView mLoadMoreViewTutors;
 
     private CollapsingToolbarLayout collapsingToolbar;
     private AppBarLayout appBarLayout;
@@ -80,6 +84,11 @@ public class DashboardActivity extends DrawerActivity {
         RecyclerView.LayoutManager layoutManager = recyclerView.getLayoutManager();
         LinearLayoutManager linearLayoutManager = (LinearLayoutManager) layoutManager;
         linearLayoutManager.setOrientation(LinearLayoutManager.HORIZONTAL);
+
+        RecyclerView recyclerViewTutors = (RecyclerView) mLoadMoreViewTutors;
+        RecyclerView.LayoutManager layoutManagerTutors = recyclerViewTutors.getLayoutManager();
+        LinearLayoutManager linearLayoutManagerTutors = (LinearLayoutManager) layoutManagerTutors;
+        linearLayoutManagerTutors.setOrientation(LinearLayoutManager.HORIZONTAL);
 
         init();
 
@@ -160,15 +169,6 @@ public class DashboardActivity extends DrawerActivity {
                 .setDescription(getString(R.string.lorem_ipsum_medium))
         );
 
-//        collapsingToolbar.setTitle(getString(R.string.featured));
-
-        LinearLayoutManager llm = new LinearLayoutManager(this);
-        llm.setOrientation(LinearLayoutManager.VERTICAL);
-//        recList.setLayoutManager(llm);
-
-        DessertAdapter adapter = new DessertAdapter();
-//        recList.setAdapter(adapter);
-
 
 
         Bitmap bitmap = BitmapFactory.decodeResource(getResources(), R.drawable.landscape);
@@ -211,6 +211,7 @@ public class DashboardActivity extends DrawerActivity {
 //        setupView();
         setupSubjectView();
         setSearchView();
+        setupTutorView();
     }
 
     private void setSearchView()
@@ -341,34 +342,6 @@ public class DashboardActivity extends DrawerActivity {
         startActivity(inbox);
     }
 
-    private void setupView(){
-
-        List<InfiniteFeedInfo> feedList = Utils.loadInfiniteFeeds(this.getApplicationContext());
-        mLoadMoreView.setLoadMoreResolver(new LoadMoreView(mLoadMoreView, feedList));
-        Log.d("DEBUG", "LoadMoreView.LOAD_VIEW_SET_COUNT " + LoadMoreView.LOAD_VIEW_SET_COUNT);
-        for(int i = 0; i < LoadMoreView.LOAD_VIEW_SET_COUNT; i++){
-            mLoadMoreView.addView(new ItemView(this.getApplicationContext(), feedList.get(i)));
-        }
-
-        // Testing the sorting
-        new Handler(Looper.getMainLooper()).postDelayed(new Runnable() {
-            @Override
-            public void run() {
-                mLoadMoreView.sort(new Comparator<Object>() {
-                    @Override
-                    public int compare(Object o1, Object o2) {
-                        if (o1 instanceof ItemView && o2 instanceof ItemView) {
-                            ItemView view1 = (ItemView) o1;
-                            ItemView view2 = (ItemView) o2;
-                            return view1.getInfo().getTitle().compareTo(view2.getInfo().getTitle());
-                        }
-                        return 0;
-                    }
-                });
-            }
-        }, 8000);
-    }
-
     private void setupSubjectView(){
 
         List<SubjectListInfo> subjectList = Utils.loadInfiniteSubjects(this.getApplicationContext());
@@ -383,6 +356,34 @@ public class DashboardActivity extends DrawerActivity {
             @Override
             public void run() {
                 mLoadMoreView.sort(new Comparator<Object>() {
+                    @Override
+                    public int compare(Object o1, Object o2) {
+                        if (o1 instanceof ItemView && o2 instanceof ItemView) {
+                            SubjectItemView view1 = (SubjectItemView) o1;
+                            SubjectItemView view2 = (SubjectItemView) o2;
+                            return view1.getInfo().getSubject_title().compareTo(view2.getInfo().getSubject_title());
+                        }
+                        return 0;
+                    }
+                });
+            }
+        }, 8000);
+    }
+
+    private void setupTutorView(){
+
+        List<SubjectListInfo> subjectList = Utils.loadInfiniteSubjects(this.getApplicationContext());
+        mLoadMoreViewTutors.setLoadMoreResolver(new LoadMoreTutorView(mLoadMoreViewTutors, subjectList));
+        Log.d("DEBUG", "LoadMoreView.LOAD_VIEW_SET_COUNT " + LoadMoreTutorView.LOAD_VIEW_SET_COUNT);
+        for(int i = 0; i < LoadMoreView.LOAD_VIEW_SET_COUNT; i++){
+            mLoadMoreViewTutors.addView(new SubjectItemView(this.getApplicationContext(), subjectList.get(i)));
+        }
+
+        // Testing the sorting
+        new Handler(Looper.getMainLooper()).postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                mLoadMoreViewTutors.sort(new Comparator<Object>() {
                     @Override
                     public int compare(Object o1, Object o2) {
                         if (o1 instanceof ItemView && o2 instanceof ItemView) {
