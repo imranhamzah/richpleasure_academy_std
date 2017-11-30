@@ -3,9 +3,11 @@ package com.mindorks.placeholderview;
 import android.content.Context;
 import android.content.res.Resources;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -50,8 +52,15 @@ public class ViewAdapter<T> extends RecyclerView.Adapter<ViewHolder> {
      * @param position
      */
     @Override
-    public void onBindViewHolder(ViewHolder holder, int position) {
+    public void onBindViewHolder(ViewHolder holder, final int position) {
         mViewBinderList.get(position).bindView(holder.itemView, position);
+
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(mContext,"clicked="+ position,Toast.LENGTH_SHORT).show();
+            }
+        });
     }
 
     @Override

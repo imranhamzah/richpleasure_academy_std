@@ -72,6 +72,7 @@ public class DashboardActivity extends DrawerActivity {
     private static final Integer[] XMEN= {R.drawable.beast,R.drawable.charles,R.drawable.magneto,R.drawable.mystique,R.drawable.wolverine};
     private ArrayList<Integer> XMENArray = new ArrayList<Integer>();
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 

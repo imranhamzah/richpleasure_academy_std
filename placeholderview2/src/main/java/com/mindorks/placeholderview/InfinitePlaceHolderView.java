@@ -12,9 +12,6 @@ import com.mindorks.placeholderview.annotations.infinite.LoadMore;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 
-/**
- * Created by janisharali on 05/10/16.
- */
 
 public class InfinitePlaceHolderView extends PlaceHolderView {
 
@@ -107,4 +104,5 @@ public class InfinitePlaceHolderView extends PlaceHolderView {
     public int getViewCount() {
         return super.getViewResolverCount() - 1;
     }
+
 }
