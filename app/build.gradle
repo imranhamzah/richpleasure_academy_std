@@ -74,4 +74,5 @@ dependencies {
     compile 'com.miguelcatalan:materialsearchview:1.4.0'
     compile 'com.jaeger.ninegridimageview:library:1.1.1'
     compile 'com.squareup.picasso:picasso:2.5.2'
+    compile project(path: ':smooth-checkbox')
 }

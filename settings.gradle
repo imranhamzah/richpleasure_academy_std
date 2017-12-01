@@ -1,1 +1,1 @@
-include ':app', ':placeholderview2', ':library', ':profile-lib'
+include ':app', ':placeholderview2', ':library', ':profile-lib', ':smooth-checkbox'

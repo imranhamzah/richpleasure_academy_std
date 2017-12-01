@@ -1,50 +1,95 @@
 package academy.richpleasure.richpleasureacademy;
 
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
+import android.support.v7.app.AppCompatActivity;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.AdapterView;
+import android.widget.BaseAdapter;
+import android.widget.ListView;
+import android.widget.TextView;
 
+import java.io.Serializable;
 import java.util.ArrayList;
-import java.util.List;
+
+import cn.refactor.library.SmoothCheckBox;
 
 public class ChapterListActivity extends AppCompatActivity {
-
-    RecyclerView recyclerView;
-    ChapterAdapter adapter;
-
-    List<Chapters> chaptersList;
-
+    private ArrayList<Bean> mList = new ArrayList<>();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_chapter_list);
 
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setHomeButtonEnabled(true);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
-        chaptersList = new ArrayList<>();
-        recyclerView = (RecyclerView) findViewById(R.id.chapterRecycleView);
-        recyclerView.setHasFixedSize(true);
-        recyclerView.setLayoutManager(new LinearLayoutManager(this));
+        for (int i = 0; i < 100; i ++) {
+            mList.add(new Bean());
+        }
 
-        chaptersList.add(
-                new Chapters(
-                        "Chapter 1","30","30","40"
-                ));
+        ListView lv = (ListView) findViewById(R.id.lv);
+        lv.setAdapter(new BaseAdapter() {
+            @Override
+            public int getCount() {
+                return mList.size();
+            }
 
-        chaptersList.add(
-                new Chapters(
-                        "Chapter 2","30","30","40"
-                ));
+            @Override
+            public Object getItem(int position) {
+                return mList.get(position);
+            }
 
-        chaptersList.add(
-                new Chapters(
-                        "Chapter 3","30","30","40"
-                ));
+            @Override
+            public long getItemId(int position) {
+                return 0;
+            }
 
-        adapter = new ChapterAdapter(this,chaptersList);
-        recyclerView.setAdapter(adapter);
+            @Override
+            public View getView(final int position, View convertView, ViewGroup parent) {
+                ViewHolder holder;
+                if (convertView == null) {
+                    holder = new ViewHolder();
+                    convertView = View.inflate(ChapterListActivity.this, R.layout.item, null);
+                    holder.tv = (TextView) convertView.findViewById(R.id.tv);
+                    holder.cb = (SmoothCheckBox) convertView.findViewById(R.id.scb);
+                    convertView.setTag(holder);
+                } else {
+                    holder = (ViewHolder) convertView.getTag();
+                }
+
+                final Bean bean = mList.get(position);
+                holder.cb.setOnCheckedChangeListener(new SmoothCheckBox.OnCheckedChangeListener() {
+                    @Override
+                    public void onCheckedChanged(SmoothCheckBox checkBox, boolean isChecked) {
+                        bean.isChecked = isChecked;
+                    }
+                });
+                String text = getString(R.string.string_item_subffix) + position;
+                holder.tv.setText(text);
+                holder.cb.setChecked(bean.isChecked);
+
+                return convertView;
+            }
+
+            class ViewHolder {
+                SmoothCheckBox cb;
+                TextView tv;
+            }
+        });
+        lv.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                Bean bean = (Bean) parent.getAdapter().getItem(position);
+                bean.isChecked = !bean.isChecked;
+                SmoothCheckBox checkBox = (SmoothCheckBox) view.findViewById(R.id.scb);
+                checkBox.setChecked(bean.isChecked, true);
+            }
+        });
+    }
+
+    class Bean implements Serializable {
+        boolean isChecked;
     }
 
     @Override
