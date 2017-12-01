@@ -1,9 +1,9 @@
 package academy.richpleasure.richpleasureacademy;
 
 import android.content.Context;
+import android.content.Intent;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
 import com.mindorks.placeholderview.annotations.Click;
@@ -11,11 +11,6 @@ import com.mindorks.placeholderview.annotations.Layout;
 import com.mindorks.placeholderview.annotations.Resolve;
 import com.mindorks.placeholderview.annotations.View;
 
-import academy.richpleasure.richpleasureacademy.SubjectListInfo;
-
-/**
- * Created by Imran on 11/26/2017.
- */
 
 @Layout(R.layout.subjects_list)
 public class SubjectItemView {
@@ -36,16 +31,26 @@ public class SubjectItemView {
         subjectContext = context;
     }
 
+    @Click(R.id.subjectFrame)
+    public void onClick()
+    {
+        Intent gotoChapter = new Intent(subjectContext.getApplicationContext(),ChapterListActivity.class);
+        gotoChapter.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+        subjectContext.startActivity(gotoChapter);
+    }
+
+
     @Resolve
     private void onResolved() {
         subjectTitle.setText(subjectListInfo.getSubject_title());
         Glide.with(subjectContext).load(subjectListInfo.getImageUrl()).into(subjectImage);
-
     }
 
     public SubjectListInfo getInfo() {
         return subjectListInfo;
     }
+
+
 
 }
 

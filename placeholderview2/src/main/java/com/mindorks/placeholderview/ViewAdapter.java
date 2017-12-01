@@ -54,13 +54,6 @@ public class ViewAdapter<T> extends RecyclerView.Adapter<ViewHolder> {
     @Override
     public void onBindViewHolder(ViewHolder holder, final int position) {
         mViewBinderList.get(position).bindView(holder.itemView, position);
-
-        holder.itemView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Toast.makeText(mContext,"clicked="+ position,Toast.LENGTH_SHORT).show();
-            }
-        });
     }
 
     @Override

@@ -350,7 +350,7 @@ public class DashboardActivity extends DrawerActivity {
         List<SubjectListInfo> subjectList = Utils.loadInfiniteSubjects(this.getApplicationContext());
         mLoadMoreView.setLoadMoreResolver(new LoadMoreSubjectView(mLoadMoreView, subjectList));
         Log.d("DEBUG", "LoadMoreView.LOAD_VIEW_SET_COUNT " + LoadMoreSubjectView.LOAD_VIEW_SET_COUNT);
-        for(int i = 0; i < LoadMoreView.LOAD_VIEW_SET_COUNT; i++){
+        for(int i = 0; i < LoadMoreSubjectView.LOAD_VIEW_SET_COUNT; i++){
             mLoadMoreView.addView(new SubjectItemView(this.getApplicationContext(), subjectList.get(i)));
         }
 
