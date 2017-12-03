@@ -48,9 +48,9 @@ public class ChapterAdapter extends RecyclerView.Adapter<ChapterAdapter.ChapterV
         public ChapterViewHolder(View itemView) {
             super(itemView);
 
-            chapterIcon = (ImageView) itemView.findViewById(R.id.chapterIcon);
-            chapterTitle = (TextView) itemView.findViewById(R.id.chapterTitle);
-            chapterCurrentProgress = (TextView) itemView.findViewById(R.id.chapterCurrentProgress);
+//            chapterIcon = (ImageView) itemView.findViewById(R.id.chapterIcon);
+//            chapterTitle = (TextView) itemView.findViewById(R.id.chapterTitle);
+//            chapterCurrentProgress = (TextView) itemView.findViewById(R.id.chapterCurrentProgress);
         }
     }
 }

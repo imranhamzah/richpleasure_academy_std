@@ -34,7 +34,7 @@ public class SubjectItemView {
     @Click(R.id.subjectFrame)
     public void onClick()
     {
-        Intent gotoChapter = new Intent(subjectContext.getApplicationContext(),ChapterListActivity.class);
+        Intent gotoChapter = new Intent(subjectContext.getApplicationContext(),ChapterActivity.class);
         gotoChapter.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
         subjectContext.startActivity(gotoChapter);
     }
