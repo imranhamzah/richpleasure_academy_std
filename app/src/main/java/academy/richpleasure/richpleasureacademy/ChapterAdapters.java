@@ -1,6 +1,7 @@
 package academy.richpleasure.richpleasureacademy;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -58,6 +59,9 @@ public class ChapterAdapters extends BaseAdapter implements ListAdapter {
             public void onClick(View v) {
                 //do something
                 notifyDataSetChanged();
+                Intent chapterContent = new Intent(context.getApplicationContext(),ChapterContentActivity.class);
+                context.startActivity(chapterContent);
+
                 
             }
         });

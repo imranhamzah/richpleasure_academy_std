@@ -125,5 +125,6 @@
     </string-array>
 
     <string name="string_item_subffix">"Item: "</string>
+    <string name="i_want_a_tutor">I want a Tutor</string>
 
 </resources>

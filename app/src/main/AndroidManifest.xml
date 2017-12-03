@@ -73,11 +73,14 @@
             android:name=".SubjectListDetails"
             android:label="@string/subject_list" />
         <activity android:name=".TutorListActivity" />
-        <activity android:name=".ChapterListActivity"
-            android:label="@string/chapter_list"
-            ></activity>
-        <activity android:name=".ChapterActivity"
-            android:label="@string/chapter_list"
+        <activity
+            android:name=".ChapterListActivity"
+            android:label="@string/chapter_list" />
+        <activity
+            android:name=".ChapterActivity"
+            android:label="@string/chapter_list" />
+        <activity android:name=".ChapterContentActivity"
+            android:label="Chapter Content"
             ></activity>
     </application>
 
