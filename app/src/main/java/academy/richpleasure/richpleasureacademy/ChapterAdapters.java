@@ -51,13 +51,14 @@ public class ChapterAdapters extends BaseAdapter implements ListAdapter {
         listItemText.setText(list.get(position));
 
         //Handle buttons and add onClickListeners
-        Button addBtn = (Button)view.findViewById(R.id.start_btn);
+        Button startBtn = (Button)view.findViewById(R.id.start_btn);
 
-        addBtn.setOnClickListener(new View.OnClickListener(){
+        startBtn.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v) {
                 //do something
                 notifyDataSetChanged();
+                
             }
         });
 
