@@ -13,7 +13,7 @@ import java.util.List;
 @Layout(R.layout.load_more_view)
 public class LoadMoreSubjectView {
 
-    public static final int LOAD_VIEW_SET_COUNT = 6;
+    public static final int LOAD_VIEW_SET_COUNT = 10;
 
     private InfinitePlaceHolderView mLoadMoreView;
     private List<SubjectListInfo> mSubjectList;
