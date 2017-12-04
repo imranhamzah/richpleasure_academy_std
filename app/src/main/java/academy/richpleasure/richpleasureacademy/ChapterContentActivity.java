@@ -24,7 +24,7 @@ public class ChapterContentActivity extends AppCompatActivity {
 
         WebSettings webSettings = webView.getSettings();
         webSettings.setJavaScriptEnabled(true);
-        webView.loadUrl("https://freeschoolmy.docsend.com/view/pkr2rz7");
+        webView.loadUrl("https://www.slideshare.net/itcsab/spm-2014-add-math-modul-sbp-super-score-lemah-k2-set-2-dan-skema?qid=8a458c3c-8dc3-417c-bebf-e1ce65d046f7&v=&b=&from_search=12");
 
     }
 
