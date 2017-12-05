@@ -75,4 +75,6 @@ dependencies {
     compile 'com.jaeger.ninegridimageview:library:1.1.1'
     compile 'com.squareup.picasso:picasso:2.5.2'
     compile project(path: ':smooth-checkbox')
+    compile 'com.thefinestartist:ytpa:1.2.1'
+
 }
