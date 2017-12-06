@@ -63,11 +63,11 @@
         </receiver>
 
         <activity android:name=".SplashScreenActivity">
-            <!--<intent-filter>
+            <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>-->
+            </intent-filter>
         </activity>
         <activity
             android:name=".SubjectListDetails"
@@ -82,17 +82,12 @@
         <activity
             android:name=".ChapterContentActivity"
             android:label="Chapter Content" />
-        <activity android:name=".YouTubePlayerActivity"
+        <activity
+            android:name=".YouTubePlayerActivity"
             android:configChanges="keyboardHidden|orientation|screenSize"
             android:screenOrientation="sensor"
-            android:theme="@android:style/Theme.NoTitleBar.Fullscreen"
-            >
+            android:theme="@android:style/Theme.NoTitleBar.Fullscreen">
 
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
 
         </activity>
     </application>

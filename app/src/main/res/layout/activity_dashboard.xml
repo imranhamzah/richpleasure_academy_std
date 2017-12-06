@@ -94,6 +94,7 @@
                     android:layout_height="wrap_content"
                     android:divider="@null"
                     android:orientation="horizontal"
+                    android:elevation="10dp"
                     app:reverseLayout="true" />
 
             </LinearLayout>
@@ -119,6 +120,7 @@
                     android:layout_height="wrap_content"
                     android:divider="@null"
                     android:orientation="horizontal"
+                    android:elevation="10dp"
                     app:reverseLayout="true" />
 
             </LinearLayout>

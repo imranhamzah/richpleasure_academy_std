@@ -3,7 +3,7 @@ xmlns:app="http://schemas.android.com/apk/res-auto"
 xmlns:tools="http://schemas.android.com/tools" tools:context=".DashboardActivity">
 
 <item
-    android:id="@+id/search" android:icon="@drawable/ic_action_search" app:showAsAction="always"   android:title="@string/search"/>
+    android:id="@+id/search" android:icon="@drawable/ic_search_black_24dp" app:showAsAction="always"   android:title="@string/search"/>
 <item
     android:id="@+id/inbox" android:icon="@drawable/ic_notifications_black_24dp" app:showAsAction="always" android:title="@string/inbox"/>
 
