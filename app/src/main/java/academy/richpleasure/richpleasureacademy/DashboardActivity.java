@@ -28,6 +28,7 @@ import android.view.Window;
 import android.os.Handler;
 import android.support.v4.view.ViewPager;
 import android.view.WindowManager;
+import android.widget.Button;
 import android.widget.LinearLayout;
 
 import com.heinrichreimersoftware.materialdrawer.DrawerActivity;
@@ -40,6 +41,7 @@ import com.mindorks.placeholderview.InfinitePlaceHolderView;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Comparator;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Timer;
 import java.util.TimerTask;
@@ -71,6 +73,9 @@ public class DashboardActivity extends DrawerActivity {
     private static int currentPage = 0;
     private static final Integer[] XMEN= {R.drawable.beast,R.drawable.charles,R.drawable.magneto,R.drawable.mystique,R.drawable.wolverine};
     private ArrayList<Integer> XMENArray = new ArrayList<Integer>();
+
+    private SQLiteHandler db;
+    private SessionManager session;
 
 
     @Override
@@ -151,8 +156,7 @@ public class DashboardActivity extends DrawerActivity {
                     startActivity(i);
                 }else if(position == 4)
                 {
-                    Intent i = new Intent(getApplicationContext(), LoginActivity.class);
-                    startActivity(i);
+                    logoutUser();
                 }
                 closeDrawer();
             }
@@ -215,6 +219,41 @@ public class DashboardActivity extends DrawerActivity {
         setupSubjectView();
         setSearchView();
         setupTutorView();
+
+
+
+        // SqLite database handler
+        db = new SQLiteHandler(getApplicationContext());
+
+        // session manager
+        session = new SessionManager(getApplicationContext());
+
+        if (!session.isLoggedIn()) {
+            logoutUser();
+        }
+
+        // Fetching user details from sqlite
+        HashMap<String, String> user = db.getUserDetails();
+
+        String name = user.get("name");
+        String email = user.get("email");
+
+        // Displaying the user details on the screen
+//        txtName.setText(name);
+//        txtEmail.setText(email);
+
+        // Logout button click event
+    }
+
+    private void logoutUser() {
+        session.setLogin(false);
+
+        db.deleteUsers();
+
+        // Launching the login activity
+        Intent intent = new Intent(DashboardActivity.this, LoginActivity.class);
+        startActivity(intent);
+        finish();
     }
 
     private void setSearchView()
