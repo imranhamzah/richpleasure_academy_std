@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#00026e</color>
-    <color name="colorPrimaryDark">#000521</color>
-    <color name="colorAccent">#FF4081</color>
+    <color name="colorPrimary">#673AB7</color>
+    <color name="colorPrimaryDark">#673AB7</color>
+    <color name="colorAccent">#B388FF</color>
 
 
     <color name="color_log_in">#94019c8f</color>
@@ -87,14 +87,14 @@
     <!-- White 70% -->
     <color name="text_color_secondary_3">#B3FFFFFF</color>
 
-    <color name="theme_primary">#2196F3</color>
-    <color name="theme_primary_dark">#1976D2</color>
-    <color name="theme_primary_light">#BBDEFB</color>
+    <color name="theme_primary">#673AB7</color>
+    <color name="theme_primary_dark">#673AB7</color>
+    <color name="theme_primary_light">#EDE7F6</color>
 
-    <color name="theme_background">#FFFFFF</color>
-    <color name="theme_background_inverse">#212121</color>
+    <color name="theme_background">#EDE7F6</color>
+    <color name="theme_background_inverse">#311B92</color>
 
-    <color name="theme_accent_1">#212121</color>
+    <color name="theme_accent_1">#B388FF</color>
 
     <color name="theme_primary_trans">#99212121</color>
 
