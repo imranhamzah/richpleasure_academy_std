@@ -41,8 +41,8 @@
             <TextView
                 android:id="@+id/my_subjects"
                 style="@style/MySubjects"
-                android:layout_marginTop="10dp"
                 android:layout_marginBottom="2dp"
+                android:layout_marginTop="10dp"
                 android:text="My subjects" />
 
             <com.vansuita.materialabout.views.AutoFitGridLayout
@@ -55,22 +55,33 @@
 
             </com.vansuita.materialabout.views.AutoFitGridLayout>
 
-            <TextView
-                android:id="@+id/my_tutors"
-                style="@style/MyTutors"
-                android:layout_marginTop="10dp"
-                android:layout_marginBottom="2dp"
-                android:text="My tutors" />
-
-            <com.vansuita.materialabout.views.AutoFitGridLayout
-                android:id="@+id/my_tutor_list"
+            <LinearLayout
+                android:id="@+id/app_holder"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
+                android:background="@drawable/social_media_divider"
                 android:gravity="center"
-                android:orientation="vertical">
+                android:orientation="vertical"
+                android:paddingTop="@dimen/social_media_vertical_padding">
 
-            </com.vansuita.materialabout.views.AutoFitGridLayout>
+                <TextView
+                    android:id="@+id/my_tutors"
+                    style="@style/MyTutors"
+                    android:layout_marginBottom="2dp"
+                    android:layout_marginTop="10dp"
+                    android:text="My tutors" />
+
+                <com.vansuita.materialabout.views.AutoFitGridLayout
+                    android:id="@+id/my_tutor_list"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                </com.vansuita.materialabout.views.AutoFitGridLayout>
+            </LinearLayout>
         </LinearLayout>
 
     </FrameLayout>

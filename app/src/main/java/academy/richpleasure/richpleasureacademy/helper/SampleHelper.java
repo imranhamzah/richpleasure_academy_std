@@ -46,6 +46,7 @@ public class SampleHelper implements View.OnClickListener {
                 .addChangeLogAction((Intent) null)
                 .addRemoveAdsAction((Intent) null)
                 .addDonateAction((Intent) null)
+                .setDividerDashGap(13)
                 .setMyTutors("My Tutors")
                 .setTutorsColumnsCount(2)
                 .addChangeLogAction((Intent) null)
