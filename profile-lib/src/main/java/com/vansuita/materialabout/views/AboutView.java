@@ -36,10 +36,11 @@ public final class AboutView extends FrameLayout {
     private CircleImageView ivPhoto;
     private ImageView ivCover;
     private TextView tvName;
-    private TextView tvSubTitle;
-    private TextView tvBrief;
+    private TextView tvMySubjects;
+    private TextView tvMyTutors;
 
     private AutoFitGridLayout vActions;
+    private AutoFitGridLayout vMyTutors;
 
     private Boolean isDarker;
     private int iconColor = 0;
@@ -84,10 +85,11 @@ public final class AboutView extends FrameLayout {
         ivPhoto = (CircleImageView) findViewById(R.id.photo);
         ivCover = (ImageView) findViewById(R.id.cover);
         tvName = (TextView) findViewById(R.id.name);
-        tvSubTitle = (TextView) findViewById(R.id.sub_title);
-        tvBrief = (TextView) findViewById(R.id.brief);
+        tvMySubjects = (TextView) findViewById(R.id.my_subjects);
+        tvMyTutors = (TextView) findViewById(R.id.my_tutors);
 
         vActions = (AutoFitGridLayout) findViewById(R.id.actions);
+        vMyTutors = (AutoFitGridLayout) findViewById(R.id.my_tutor_list);
     }
 
     public void build(AboutBuilder bundle) {
@@ -99,18 +101,17 @@ public final class AboutView extends FrameLayout {
         tvName.setText(bundle.getName());
         VisibleUtil.handle(tvName, bundle.getName());
 
-        tvSubTitle.setText(bundle.getSubTitle());
-        VisibleUtil.handle(tvSubTitle, bundle.getSubTitle());
+        tvMySubjects.setText(bundle.getMySubjects());
+        VisibleUtil.handle(tvMySubjects, bundle.getMySubjects());
 
-        tvBrief.setText(bundle.getBrief());
-        VisibleUtil.handle(tvBrief, bundle.getBrief());
+        tvMyTutors.setText(bundle.getMyTutors());
+        VisibleUtil.handle(tvMyTutors, bundle.getMyTutors());
 
         setBitmap(ivCover, bundle.getCover());
         setBitmap(ivPhoto, bundle.getPhoto());
 
         setTextColor(tvName, bundle.getNameColor());
-        setTextColor(tvSubTitle, bundle.getSubTitleColor());
-        setTextColor(tvBrief, bundle.getBriefColor());
+        setTextColor(tvMySubjects, bundle.getSubTitleColor());
 
         this.iconColor = bundle.getIconColor();
 

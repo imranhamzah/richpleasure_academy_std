@@ -29,10 +29,11 @@ public final class AboutBuilder {
     private IntentUtil util;
 
     private String name;
-    private String subTitle;
+    private String mySubjects;
     private String brief;
     private String appName;
     private String appTitle;
+    private String myTutors;
 
     private Bitmap photo;
     private Bitmap cover;
@@ -137,8 +138,8 @@ public final class AboutBuilder {
      * @param text the sub title
      * @return the same {@link AboutBuilder} instance
      */
-    public AboutBuilder setSubTitle(String text) {
-        this.subTitle = text;
+    public AboutBuilder setMySubjects(String text) {
+        this.mySubjects = text;
         return this;
     }
 
@@ -149,7 +150,12 @@ public final class AboutBuilder {
      * @return the same {@link AboutBuilder} instance
      */
     public AboutBuilder setSubTitle(int text) {
-        return setSubTitle(context.getString(text));
+        return setMySubjects(context.getString(text));
+    }
+
+    public AboutBuilder setMyTutors(String text) {
+        this.myTutors = text;
+        return this;
     }
 
     /**
@@ -1857,8 +1863,8 @@ public final class AboutBuilder {
         return name;
     }
 
-    public String getSubTitle() {
-        return subTitle;
+    public String getMySubjects() {
+        return mySubjects;
     }
 
     public String getBrief() {
@@ -1871,6 +1877,10 @@ public final class AboutBuilder {
 
     public String getAppTitle() {
         return appTitle;
+    }
+
+    public String getMyTutors() {
+        return myTutors;
     }
 
     public Bitmap getPhoto() {

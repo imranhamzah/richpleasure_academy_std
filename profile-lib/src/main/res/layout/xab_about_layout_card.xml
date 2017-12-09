@@ -37,19 +37,33 @@
                 android:paddingTop="10dp"
                 android:text="Your Full Name" />
 
-            <TextView
-                android:id="@+id/sub_title"
-                style="@style/SubTitle"
-                android:text="Just a sub title" />
 
             <TextView
-                android:id="@+id/brief"
-                style="@style/Brief"
-                android:layout_margin="5dp"
-                android:text="This is as short message saying who you are and what you like to do." />
+                android:id="@+id/my_subjects"
+                style="@style/MySubjects"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="2dp"
+                android:text="My subjects" />
 
             <com.vansuita.materialabout.views.AutoFitGridLayout
                 android:id="@+id/actions"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:orientation="vertical">
+
+            </com.vansuita.materialabout.views.AutoFitGridLayout>
+
+            <TextView
+                android:id="@+id/my_tutors"
+                style="@style/MyTutors"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="2dp"
+                android:text="My tutors" />
+
+            <com.vansuita.materialabout.views.AutoFitGridLayout
+                android:id="@+id/my_tutor_list"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
