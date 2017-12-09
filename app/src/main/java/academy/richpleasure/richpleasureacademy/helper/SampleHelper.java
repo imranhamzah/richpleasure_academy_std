@@ -41,7 +41,7 @@ public class SampleHelper implements View.OnClickListener {
                 .setLinksAnimated(true)
                 .setDividerDashGap(13)
                 .setName("Imran Hamzah")
-                .setSubTitle("Home Tutor")
+                .setSubTitle("Sekolah Menengah Kebangsaan Chukai (SMKC)")
                 .setLinksColumnsCount(4)
                 .setBrief("I'm experience more than 5 years in Add Math.")
                 .addGooglePlayStoreLink("8002078663318221363")

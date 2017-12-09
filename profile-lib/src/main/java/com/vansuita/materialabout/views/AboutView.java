@@ -6,7 +6,6 @@ import android.graphics.Bitmap;
 import android.graphics.Color;
 import android.graphics.drawable.Drawable;
 import android.graphics.drawable.GradientDrawable;
-import android.graphics.drawable.Icon;
 import android.graphics.drawable.LayerDrawable;
 import android.os.Handler;
 import android.support.v7.widget.CardView;
@@ -27,9 +26,7 @@ import com.vansuita.materialabout.util.RippleUtil;
 import com.vansuita.materialabout.util.VisibleUtil;
 
 
-/**
- * Created by jrvansuita on 10/02/17.
- */
+
 
 public final class AboutView extends FrameLayout {
 

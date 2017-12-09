@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#673AB7</color>
-    <color name="colorPrimaryDark">#673AB7</color>
+    <color name="colorPrimary">#5E35B1</color>
+    <color name="colorPrimaryDark">#512DA8</color>
     <color name="colorAccent">#B388FF</color>
 
 
@@ -63,23 +63,23 @@
     <color name="shadow">#77BBBBBB</color>
     <color name="grey">#e5e5e5</color>
 
-    <color name="primary_500">#00026e</color>
+    <color name="primary_500">#673AB7</color>
     <!--Indigo 700-->
-    <color name="primary_700">#000521</color>
+    <color name="primary_700">#512DA8</color>
     <!--Pink 500-->
-    <color name="accent_500">#E91E63</color>
+    <color name="accent_500">#651FFF</color>
     <!--Pink 700-->
-    <color name="accent_700">#C2185B</color>
+    <color name="accent_700">#6200EA</color>
     <color name="black_trans80">#33000000</color>
     <color name="grey_500">#9E9E9E</color>
     <color name="grey_300">#E0E0E0</color>
 
     <!-- Teal 600 -->
-    <color name="color_primary_3">#00897B</color>
+    <color name="color_primary_3">#673AB7</color>
     <!-- Teal 800 -->
-    <color name="color_primary_dark_3">#00695C</color>
+    <color name="color_primary_dark_3">#512DA8</color>
     <!-- Cyan A200 -->
-    <color name="color_accent_3">#18FFFF</color>
+    <color name="color_accent_3">#651FFF</color>
     <!-- Blue Grey 800 -->
     <color name="window_background_3">#263238</color>
     <!-- White 100% -->
@@ -92,7 +92,7 @@
     <color name="theme_primary_light">#EDE7F6</color>
 
     <color name="theme_background">#EDE7F6</color>
-    <color name="theme_background_inverse">#311B92</color>
+    <color name="theme_background_inverse">#512DA8</color>
 
     <color name="theme_accent_1">#B388FF</color>
 
