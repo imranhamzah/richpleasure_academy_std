@@ -28,8 +28,6 @@ import android.view.Window;
 import android.os.Handler;
 import android.support.v4.view.ViewPager;
 import android.view.WindowManager;
-import android.widget.Button;
-import android.widget.LinearLayout;
 
 import com.heinrichreimersoftware.materialdrawer.DrawerActivity;
 import com.heinrichreimersoftware.materialdrawer.structure.DrawerItem;
@@ -47,10 +45,8 @@ import java.util.Timer;
 import java.util.TimerTask;
 
 import academy.richpleasure.richpleasureacademy.act.ActivitySample;
-import academy.richpleasure.richpleasureacademy.infinite.InfiniteFeedInfo;
 import academy.richpleasure.richpleasureacademy.infinite.ItemView;
 import academy.richpleasure.richpleasureacademy.infinite.LoadMoreView;
-import butterknife.BindView;
 import me.relex.circleindicator.CircleIndicator;
 
 public class DashboardActivity extends DrawerActivity {
