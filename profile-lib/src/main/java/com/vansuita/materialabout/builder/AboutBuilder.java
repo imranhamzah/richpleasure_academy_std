@@ -55,6 +55,17 @@ public final class AboutBuilder {
     private int linksColumnsCount = 5;
     private int actionsColumnsCount = 2;
 
+    public int getTutorsColumnsCount() {
+        return tutorsColumnsCount;
+    }
+
+    public AboutBuilder setTutorsColumnsCount(int tutorsColumnsCount) {
+        this.tutorsColumnsCount = tutorsColumnsCount;
+        return this;
+    }
+
+    private int tutorsColumnsCount = 2;
+
     private boolean wrapScrollView = false;
     private boolean showAsCard = true;
 
