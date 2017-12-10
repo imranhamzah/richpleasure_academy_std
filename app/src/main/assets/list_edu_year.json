@@ -1,0 +1,68 @@
+[
+  {
+    "edu_year_id": 1,
+    "edu_level_id": 1,
+    "year_name_std": "Tahun 1",
+    "year_name_eg": "Standard 1"
+  },
+  {
+    "edu_year_id": 2,
+    "edu_level_id": 1,
+    "year_name_std": "Tahun 2",
+    "year_name_eg": "Standard 2"
+  },
+  {
+    "edu_year_id": 3,
+    "edu_level_id": 1,
+    "year_name_std": "Tahun 3",
+    "year_name_eg": "Standard 3"
+  },
+  {
+    "edu_year_id": 4,
+    "edu_level_id": 1,
+    "year_name_std": "Tahun 4",
+    "year_name_eg": "Standard 4"
+  },
+  {
+    "edu_year_id": 5,
+    "edu_level_id": 1,
+    "year_name_std": "Tahun 5",
+    "year_name_eg": "Standard 5"
+  },
+  {
+    "edu_year_id": 6,
+    "edu_level_id": 1,
+    "year_name_std": "Tahun 6",
+    "year_name_eg": "Standard 6"
+  },
+  {
+    "edu_year_id": 7,
+    "edu_level_id": 2,
+    "year_name_std": "Tingkatan 1",
+    "year_name_eg": "Form 1"
+  },
+  {
+    "edu_year_id": 8,
+    "edu_level_id": 2,
+    "year_name_std": "Tingkatan 2",
+    "year_name_eg": "Form 2"
+  },
+  {
+    "edu_year_id": 9,
+    "edu_level_id": 2,
+    "year_name_std": "Tingkatan 3",
+    "year_name_eg": "Form 3"
+  },
+  {
+    "edu_year_id": 10,
+    "edu_level_id": 3,
+    "year_name_std": "Tingkatan 4",
+    "year_name_eg": "Form 4"
+  },
+  {
+    "edu_year_id": 11,
+    "edu_level_id": 3,
+    "year_name_std": "Tingkatan 5",
+    "year_name_eg": "Form 5"
+  }
+]

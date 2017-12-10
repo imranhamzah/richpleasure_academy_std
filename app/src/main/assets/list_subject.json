@@ -1,0 +1,200 @@
+[
+  {
+    "scode_id": 1,
+    "short_name_std": "MATH",
+    "short_name_eg": "M3",
+    "subject_name_std": "Matematik",
+    "subject_name_eg": "Mathematics",
+    "colour_code": "#800080",
+    "icon_filename": "icon_math.png"
+  },
+  {
+    "scode_id": 2,
+    "short_name_std": "SEJ",
+    "short_name_eg": "SEJ",
+    "subject_name_std": "Sejarah",
+    "subject_name_eg": "Sejarah",
+    "colour_code": "#FF00FF",
+    "icon_filename": "icon_sej.png"
+  },
+  {
+    "scode_id": 3,
+    "short_name_std": "GEO",
+    "short_name_eg": "GEO",
+    "subject_name_std": "Geografi",
+    "subject_name_eg": "Geography",
+    "colour_code": "	#000080",
+    "icon_filename": "icon_geog.png"
+  },
+  {
+    "scode_id": 4,
+    "short_name_std": "SCI",
+    "short_name_eg": "SCI",
+    "subject_name_std": "Sains",
+    "subject_name_eg": "Science",
+    "colour_code": "#0000FF",
+    "icon_filename": "icon_science.png"
+  },
+  {
+    "scode_id": 5,
+    "short_name_std": "PAI",
+    "short_name_eg": "PAI",
+    "subject_name_std": "Pendidikan Agama Islam",
+    "subject_name_eg": "Pendidikan Agama Islam",
+    "colour_code": "#28B463",
+    "icon_filename": "icon_pai.png"
+  },
+  {
+    "scode_id": 6,
+    "short_name_std": "KH",
+    "short_name_eg": "KH",
+    "subject_name_std": "Kemahiran Hidup",
+    "subject_name_eg": "Kemahiran Hidup",
+    "colour_code": "#00FFFF",
+    "icon_filename": "icon_kh.png"
+  },
+  {
+    "scode_id": 7,
+    "short_name_std": "PA",
+    "short_name_eg": "PA",
+    "subject_name_std": "Prinsip Akaun",
+    "subject_name_eg": "Prinsip Akaun",
+    "colour_code": "#008000",
+    "icon_filename": "icon_akaun.png"
+  },
+  {
+    "scode_id": 8,
+    "short_name_std": "BIO",
+    "short_name_eg": "BIO",
+    "subject_name_std": "Biologi",
+    "subject_name_eg": "Biology",
+    "colour_code": "#00FF00",
+    "icon_filename": "icon_biology.png"
+  },
+  {
+    "scode_id": 9,
+    "short_name_std": "KIM",
+    "short_name_eg": "CHE",
+    "subject_name_std": "Kimia",
+    "subject_name_eg": "Chemistry",
+    "colour_code": "#808000",
+    "icon_filename": "icon_chemistry.png"
+  },
+  {
+    "scode_id": 10,
+    "short_name_std": "FIZ",
+    "short_name_eg": "PHY",
+    "subject_name_std": "Fizik",
+    "subject_name_eg": "Physic",
+    "colour_code": "#800000",
+    "icon_filename": "icon_physics.png"
+  },
+  {
+    "scode_id": 11,
+    "short_name_std": "EKO",
+    "short_name_eg": "ECO",
+    "subject_name_std": "Ekonomi",
+    "subject_name_eg": "Economy",
+    "colour_code": "#FFFF00",
+    "icon_filename": "icon_eco.png"
+  },
+  {
+    "scode_id": 12,
+    "short_name_std": "M3+",
+    "short_name_eg": "M3+",
+    "subject_name_std": "Matematik Tambahan",
+    "subject_name_eg": "Additional Mathematic",
+    "colour_code": "#FF0000",
+    "icon_filename": "icon_addmath.png"
+  },
+  {
+    "scode_id": 13,
+    "short_name_std": "MOR",
+    "short_name_eg": "MOR",
+    "subject_name_std": "Moral",
+    "subject_name_eg": "Moral",
+    "colour_code": "#E67E22 ",
+    "icon_filename": "icon_moral.png"
+  },
+  {
+    "scode_id": 14,
+    "short_name_std": "ARB",
+    "short_name_eg": "ARB",
+    "subject_name_std": "Bahasa Arab",
+    "subject_name_eg": "Bahasa Arab",
+    "colour_code": "#AED6F1",
+    "icon_filename": "icon_arab.png"
+  },
+  {
+    "scode_id": 15,
+    "short_name_std": "BI",
+    "short_name_eg": "EG",
+    "subject_name_std": "Bahasa Inggeris",
+    "subject_name_eg": "English",
+    "colour_code": "#008080",
+    "icon_filename": "icon_eng.png"
+  },
+  {
+    "scode_id": 16,
+    "short_name_std": "BM",
+    "short_name_eg": "BM",
+    "subject_name_std": "Bahasa Malaysia",
+    "subject_name_eg": "Bahasa Malaysia",
+    "colour_code": "#CD6155",
+    "icon_filename": "icon_bm.png"
+  },
+  {
+    "scode_id": 17,
+    "short_name_std": "PDAG",
+    "short_name_eg": "PDAG",
+    "subject_name_std": "Perdagangan",
+    "subject_name_eg": "Perdagangan",
+    "colour_code": "#1ABC9C",
+    "icon_filename": "icon_perdagangan.png"
+  },
+  {
+    "scode_id": 18,
+    "short_name_std": "RBT",
+    "short_name_eg": "RBT",
+    "subject_name_std": "Reka Bentuk dan Teknologi",
+    "subject_name_eg": "Reka Bentuk dan Teknologi",
+    "colour_code": "#5DADE2",
+    "icon_filename": "icon_rekabentuk.png"
+  },
+  {
+    "scode_id": 19,
+    "short_name_std": "ITC",
+    "short_name_eg": "ITC",
+    "subject_name_std": "Teknologi Maklumat dan Komunikasi",
+    "subject_name_eg": "Teknologi Maklumat dan Komunikasi",
+    "colour_code": "#D4AC0D ",
+    "icon_filename": "icon_tmk.png"
+  },
+  {
+    "scode_id": 20,
+    "short_name_std": "PSV",
+    "short_name_eg": "PSV",
+    "subject_name_std": "Pendidikan Seni Visual",
+    "subject_name_eg": "Pendidikan Seni Visual",
+    "colour_code": "#AF7AC5",
+    "icon_filename": "icon_psv.png"
+  },
+  {
+    "scode_id": 21,
+    "short_name_std": "PMUZ",
+    "short_name_eg": "PMUZ",
+    "subject_name_std": "Pendidikan Muzik",
+    "subject_name_eg": "Pendidikan Muzik",
+    "colour_code": "#F5CBA7",
+    "icon_filename": "icon_music.png"
+  },
+  {
+    "scode_id": 22,
+    "short_name_std": "DST",
+    "short_name_eg": "DST",
+    "subject_name_std": "Dunia Sains dan Teknologi",
+    "subject_name_eg": "Dunia Sains dan Teknologi",
+    "colour_code": "#0000FF",
+    "icon_filename": "icon_science.png"
+  }
+]
