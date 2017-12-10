@@ -59,11 +59,6 @@ public final class AboutBuilder {
         return tutorsColumnsCount;
     }
 
-    public AboutBuilder setTutorsColumnsCount(int tutorsColumnsCount) {
-        this.tutorsColumnsCount = tutorsColumnsCount;
-        return this;
-    }
-
     private int tutorsColumnsCount = 2;
 
     private boolean wrapScrollView = false;
@@ -71,6 +66,7 @@ public final class AboutBuilder {
 
     private LinkedList<Item> links = new LinkedList<>();
     private LinkedList<Item> actions = new LinkedList<>();
+    private LinkedList<Item> tutors = new LinkedList<>();
 
     /**
      * @deprecated Used {@link #with(Context)} instead.
@@ -85,6 +81,12 @@ public final class AboutBuilder {
         //noinspection deprecation
         return new AboutBuilder(context);
     }
+
+    public AboutBuilder setTutorsColumnsCount(int tutorsColumnsCount) {
+        this.tutorsColumnsCount = tutorsColumnsCount;
+        return this;
+    }
+
 
     private String getApplicationID() {
         return context.getPackageName();
@@ -1968,6 +1970,10 @@ public final class AboutBuilder {
 
     public LinkedList<Item> getActions() {
         return actions;
+    }
+
+    public LinkedList<Item> getTutors() {
+        return tutors;
     }
 
     public AboutView build() {

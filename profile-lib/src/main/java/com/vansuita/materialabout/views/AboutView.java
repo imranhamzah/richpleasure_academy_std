@@ -121,9 +121,15 @@ public final class AboutView extends FrameLayout {
         if (bundle.getActionsColumnsCount() != 0)
             vActions.setColumnCount(bundle.getActionsColumnsCount());
 
+        if (bundle.getTutorsColumnsCount() != 0)
+            vMyTutors.setColumnCount(bundle.getTutorsColumnsCount());
+
+
+        vMyTutors.setColumnCount(bundle.getTutors().isEmpty() ? GONE : VISIBLE);
         vActions.setVisibility(bundle.getActions().isEmpty() ? GONE : VISIBLE);
 
         loadActions(bundle);
+        loadMyTutors(bundle);
     }
 
 
@@ -198,6 +204,12 @@ public final class AboutView extends FrameLayout {
     private void loadActions(AboutBuilder bundle) {
         for (Item item : bundle.getActions()) {
             addItem(vActions, R.layout.xab_each_action, item);
+        }
+    }
+
+    private void loadMyTutors(AboutBuilder bundle) {
+        for (Item item : bundle.getLinks()) {
+            addItem(vMyTutors, R.layout.xab_each_link, item);
         }
     }
 
