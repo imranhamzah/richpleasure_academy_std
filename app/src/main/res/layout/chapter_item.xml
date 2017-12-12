@@ -11,4 +11,11 @@
         android:layout_alignParentTop="true"
         android:id="@+id/chapter_list_view"
         />
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/chapterRecycleView"
+        android:scrollbars="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
 </RelativeLayout>

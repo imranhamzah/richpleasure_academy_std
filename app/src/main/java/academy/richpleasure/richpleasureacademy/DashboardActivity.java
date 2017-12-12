@@ -37,6 +37,7 @@ import com.mindorks.butterknifelite.ButterKnifeLite;
 import com.mindorks.placeholderview.InfinitePlaceHolderView;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Calendar;
 import java.util.Comparator;
 import java.util.HashMap;
@@ -105,18 +106,10 @@ public class DashboardActivity extends DrawerActivity {
 
         collapsingToolbar = (CollapsingToolbarLayout) findViewById(R.id.collapsing_toolbar);
         appBarLayout = (AppBarLayout) findViewById(R.id.appbar);
-//        recList = (RecyclerView) findViewById(R.id.scrollableview);
 
         setSupportActionBar((Toolbar) findViewById(R.id.anim_toolbar));
 
 
- /*       setDrawerTheme(
-                new DrawerTheme(this)
-                        .setBackgroundColorRes(R.color.window_background_3)
-                        .setTextColorPrimaryRes(R.color.text_color_primary_3)
-                        .setTextColorSecondaryRes(R.color.text_color_secondary_3)
-        );
-*/
         addItems(new DrawerItem()
                         .setTextPrimary(getString(R.string.profile)),
                 new DrawerItem()
@@ -211,10 +204,10 @@ public class DashboardActivity extends DrawerActivity {
         cal.add(Calendar.SECOND, 15);
         alarmManager.setExact(AlarmManager.RTC_WAKEUP, cal.getTimeInMillis(), broadcast);
 
-//        setupView();
-        setupSubjectView();
+//        setupSubjectView();
         setSearchView();
         setupTutorView();
+        setupSubjectAvailable();
 
 
 
@@ -234,11 +227,6 @@ public class DashboardActivity extends DrawerActivity {
         String name = user.get("name");
         String email = user.get("email");
 
-        // Displaying the user details on the screen
-//        txtName.setText(name);
-//        txtEmail.setText(email);
-
-        // Logout button click event
     }
 
     private void logoutUser() {
@@ -380,6 +368,15 @@ public class DashboardActivity extends DrawerActivity {
         startActivity(inbox);
     }
 
+    private void setupSubjectAvailable()
+    {
+        List<Subjects> subjects = Utils.loadAvailableSubjects(this.getApplicationContext());
+        mLoadMoreView.setLoadMoreResolver(new LoadMoreSubjectAvailable(mLoadMoreView, subjects));
+        for(int i = 0; i < LoadMoreSubjectAvailable.LOAD_VIEW_SET_COUNT; i++){
+            mLoadMoreView.addView(new SubjectItem(this.getApplicationContext(), subjects.get(i)));
+        }
+    }
+
     private void setupSubjectView(){
 
         List<SubjectListInfo> subjectList = Utils.loadInfiniteSubjects(this.getApplicationContext());
@@ -399,7 +396,7 @@ public class DashboardActivity extends DrawerActivity {
                         if (o1 instanceof ItemView && o2 instanceof ItemView) {
                             SubjectItemView view1 = (SubjectItemView) o1;
                             SubjectItemView view2 = (SubjectItemView) o2;
-                            return view1.getInfo().getSubject_title().compareTo(view2.getInfo().getSubject_title());
+                            return view1.getInfo().getSubjectNameStd().compareTo(view2.getInfo().getSubjectNameStd());
                         }
                         return 0;
                     }
@@ -427,7 +424,7 @@ public class DashboardActivity extends DrawerActivity {
                         if (o1 instanceof ItemView && o2 instanceof ItemView) {
                             SubjectItemView view1 = (SubjectItemView) o1;
                             SubjectItemView view2 = (SubjectItemView) o2;
-                            return view1.getInfo().getSubject_title().compareTo(view2.getInfo().getSubject_title());
+                            return view1.getInfo().getSubjectNameStd().compareTo(view2.getInfo().getSubjectNameStd());
                         }
                         return 0;
                     }

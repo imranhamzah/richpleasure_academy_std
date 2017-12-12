@@ -2,6 +2,7 @@ package academy.richpleasure.richpleasureacademy;
 
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.drawable.Drawable;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -13,21 +14,21 @@ import com.mindorks.placeholderview.annotations.View;
 
 
 @Layout(R.layout.subjects_list)
-public class SubjectItemView {
+public class SubjectItem {
 
-    @View(R.id.subjectTitle)
-    private TextView subjectTitle;
-
-
-    @View(R.id.subjectImage)
-    private ImageView subjectImage;
+    @View(R.id.subjectName)
+    private TextView subjectName;
 
 
-    private SubjectListInfo subjectListInfo;
+    @View(R.id.subjectIcon)
+    private ImageView subjectIcon;
+
+
+    private Subjects subjects;
     private Context subjectContext;
-    public SubjectItemView(Context context, SubjectListInfo info)
+    public SubjectItem(Context context, Subjects info)
     {
-        subjectListInfo = info;
+        subjects = info;
         subjectContext = context;
     }
 
@@ -42,12 +43,13 @@ public class SubjectItemView {
 
     @Resolve
     private void onResolved() {
-        subjectTitle.setText(subjectListInfo.getSubjectNameStd());
-        Glide.with(subjectContext).load("http://photographyinspired.com/media/2014/01/Beautiful-Girl-Wallpapers.jpg").into(subjectImage);
+        subjectName.setText(subjects.getSubjectNameStd());
+
+//        Glide.with(subjectContext).load(subjects.getIconFilename()).into(subjectIcon);
     }
 
-    public SubjectListInfo getInfo() {
-        return subjectListInfo;
+    public Subjects getInfo() {
+        return subjects;
     }
 
 

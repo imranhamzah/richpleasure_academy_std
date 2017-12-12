@@ -32,8 +32,8 @@ public class ChapterAdapter extends RecyclerView.Adapter<ChapterAdapter.ChapterV
     @Override
     public void onBindViewHolder(ChapterViewHolder holder, int position) {
         Chapters chapters = chaptersList.get(position);
-        holder.chapterTitle.setText(chapters.getChapter_title());
-        holder.chapterCurrentProgress.setText(chapters.getChapter_current_progress());
+        holder.chapterTitle.setText(chapters.getChapterNameStd());
+        holder.chapterCurrentProgress.setText("DDD");
     }
 
     @Override

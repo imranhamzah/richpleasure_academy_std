@@ -1,55 +1,63 @@
 package academy.richpleasure.richpleasureacademy;
 
+import com.google.gson.annotations.Expose;
+import com.google.gson.annotations.SerializedName;
+
 /**
  * Created by Imran on 11/28/2017.
  */
 
 public class Chapters {
 
-    private String chapter_title;
+    @SerializedName("chapter_id")
+    @Expose
+    private Integer chapterId;
 
-    public Chapters(String chapter_title, String chapter_current_progress, String chapter_id, String subject_id) {
-        this.chapter_title = chapter_title;
-        this.chapter_current_progress = chapter_current_progress;
-        this.chapter_id = chapter_id;
-        this.subject_id = subject_id;
+    @SerializedName("percent_completed")
+    @Expose
+    private Integer percentCompleted;
+
+    @SerializedName("chapter_name_std")
+    @Expose
+    private String chapterNameStd;
+
+    @SerializedName("last_reviewed")
+    @Expose
+    private String lastReviewed;
+
+
+    public Integer getChapterId() {
+        return chapterId;
     }
 
-    private String chapter_current_progress;
-    private String chapter_id;
-    private String subject_id;
-
-
-
-    public String getChapter_title() {
-        return chapter_title;
+    public void setChapterId(Integer chapterId) {
+        this.chapterId = chapterId;
     }
 
-    public void setChapter_title(String chapter_title) {
-        this.chapter_title = chapter_title;
+    public Integer getPercentCompleted() {
+        return percentCompleted;
     }
 
-    public String getChapter_current_progress() {
-        return chapter_current_progress;
+    public void setPercentCompleted(Integer percentCompleted) {
+        this.percentCompleted = percentCompleted;
     }
 
-    public void setChapter_current_progress(String chapter_current_progress) {
-        this.chapter_current_progress = chapter_current_progress;
+    public String getChapterNameStd() {
+        return chapterNameStd;
     }
 
-    public String getChapter_id() {
-        return chapter_id;
+    public void setChapterNameStd(String chapterNameStd) {
+        this.chapterNameStd = chapterNameStd;
     }
 
-    public void setChapter_id(String chapter_id) {
-        this.chapter_id = chapter_id;
+    public String getLastReviewed() {
+        return lastReviewed;
     }
 
-    public String getSubject_id() {
-        return subject_id;
+    public void setLastReviewed(String lastReviewed) {
+        this.lastReviewed = lastReviewed;
     }
 
-    public void setSubject_id(String subject_id) {
-        this.subject_id = subject_id;
-    }
+
+
 }

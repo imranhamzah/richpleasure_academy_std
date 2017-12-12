@@ -2,70 +2,68 @@ package academy.richpleasure.richpleasureacademy;
 
 import android.content.Context;
 import android.content.Intent;
+import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.BaseAdapter;
-import android.widget.Button;
-import android.widget.ListAdapter;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 
-import java.util.ArrayList;
+import java.util.List;
 
-public class ChapterAdapters extends BaseAdapter implements ListAdapter {
-    private ArrayList<String> list = new ArrayList<String>();
+
+public class ChapterAdapters extends RecyclerView.Adapter<ChapterAdapters.MyViewHolder>{
+
+    private List<Chapters> chaptersList;
     private Context context;
 
-
-
-    public ChapterAdapters(ArrayList<String> list, Context context) {
-        this.list = list;
-        this.context = context;
+    public ChapterAdapters(List<Chapters> chaptersList)
+    {
+        this.chaptersList = chaptersList;
     }
 
     @Override
-    public int getCount() {
-        return list.size();
+    public ChapterAdapters.MyViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+        View itemView = LayoutInflater.from(parent.getContext()).inflate(R.layout.chapter_row,parent,false);
+        return new MyViewHolder(itemView);
     }
 
     @Override
-    public Object getItem(int pos) {
-        return list.get(pos);
-    }
+    public void onBindViewHolder(ChapterAdapters.MyViewHolder holder, int position) {
+        context = holder.itemView.getContext();
+        Chapters chapters = chaptersList.get(position);
+        holder.progressBar.setProgress(chapters.getPercentCompleted());
+        holder.chapter_name_std.setText(chapters.getChapterNameStd());
+        holder.percent_completed.setText(chapters.getPercentCompleted().toString());
 
-    @Override
-    public long getItemId(int pos) {
-        return 0;
-    }
+        holder.itemView.setOnClickListener(new View.OnClickListener(){
 
-
-    @Override
-    public View getView(final int position, View convertView, ViewGroup parent) {
-        View view = convertView;
-        if (view == null) {
-            LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-            view = inflater.inflate(R.layout.chapter_list_item, null);
-        }
-
-        //Handle TextView and display string from your list
-        TextView listItemText = (TextView)view.findViewById(R.id.list_item_string);
-        listItemText.setText(list.get(position));
-
-        //Handle buttons and add onClickListeners
-        Button startBtn = (Button)view.findViewById(R.id.start_btn);
-
-        startBtn.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v) {
-                //do something
-                notifyDataSetChanged();
-                Intent chapterContent = new Intent(context.getApplicationContext(),ChapterContentActivity.class);
-                context.startActivity(chapterContent);
-
-                
+                Intent gotoLesson = new Intent (context,ChapterContentActivity.class);
+                context.startActivity(gotoLesson);
             }
         });
 
-        return view;
+    }
+
+    @Override
+    public int getItemCount() {
+        return chaptersList.size();
+    }
+
+
+
+    public class MyViewHolder extends RecyclerView.ViewHolder {
+
+        public TextView chapter_name_std,percent_completed,last_reviewed,chapter_id;
+        public ProgressBar progressBar;
+
+        public MyViewHolder(View itemView) {
+            super(itemView);
+            chapter_name_std = (TextView) itemView.findViewById(R.id.chapter_name_std);
+            progressBar = (ProgressBar) itemView.findViewById(R.id.progressBar);
+            percent_completed = (TextView) itemView.findViewById(R.id.percent_completed);
+        }
     }
 }

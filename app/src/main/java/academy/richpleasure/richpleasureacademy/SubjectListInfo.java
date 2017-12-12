@@ -5,39 +5,77 @@ import com.google.gson.annotations.SerializedName;
 
 public class SubjectListInfo {
 
-    @SerializedName("subject_title")
+    public String getScodeId() {
+        return scodeId;
+    }
+
+    public void setScodeId(String scodeId) {
+        this.scodeId = scodeId;
+    }
+
+    public String getShortNameStd() {
+        return shortNameStd;
+    }
+
+    public void setShortNameStd(String shortNameStd) {
+        this.shortNameStd = shortNameStd;
+    }
+
+    public String getShortNameEg() {
+        return shortNameEg;
+    }
+
+    public void setShortNameEg(String shortNameEg) {
+        this.shortNameEg = shortNameEg;
+    }
+
+    public String getSubjectNameStd() {
+        return subjectNameStd;
+    }
+
+    public void setSubjectNameStd(String subjectNameStd) {
+        this.subjectNameStd = subjectNameStd;
+    }
+
+    public String getColourCode() {
+        return colourCode;
+    }
+
+    public void setColourCode(String colourCode) {
+        this.colourCode = colourCode;
+    }
+
+    public String getIconFilename() {
+        return iconFilename;
+    }
+
+    public void setIconFilename(String iconFilename) {
+        this.iconFilename = iconFilename;
+    }
+
+    @SerializedName("scode_id")
     @Expose
-    private String subject_title;
+    private String scodeId;
 
-    @SerializedName("image_url")
+    @SerializedName("short_name_std")
     @Expose
-    private String imageUrl;
+    private String shortNameStd;
 
-    @SerializedName("total_tutors")
+    @SerializedName("short_name_eg")
     @Expose
-    private String total_tutors;
+    private String shortNameEg;
 
-    public String getSubject_title() {
-        return subject_title;
-    }
+    @SerializedName("subject_name_std")
+    @Expose
+    private String subjectNameStd;
 
-    public void setSubject_title(String subject_title) {
-        this.subject_title = subject_title;
-    }
+    @SerializedName("colour_code")
+    @Expose
+    private String colourCode;
 
-    public String getTotal_tutors() {
-        return total_tutors;
-    }
+    @SerializedName("icon_filename")
+    @Expose
+    private String iconFilename;
 
-    public void setTotal_tutors(String total_tutors) {
-        this.total_tutors = total_tutors;
-    }
 
-    public String getImageUrl() {
-        return imageUrl;
-    }
-
-    public void setImageUrl(String imageUrl) {
-        this.imageUrl = imageUrl;
-    }
 }

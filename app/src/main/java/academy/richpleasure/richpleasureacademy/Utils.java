@@ -118,6 +118,42 @@ public class Utils {
         }
     }
 
+    public static List<Subjects> loadAvailableSubjects(Context context){
+        try{
+            GsonBuilder builder = new GsonBuilder();
+            Gson gson = builder.create();
+            JSONArray array = new JSONArray(loadJSONFromAsset(context, "list_subject.json"));
+            List<Subjects> subjectList = new ArrayList<>();
+            for(int i=0;i<array.length();i++){
+                Subjects subject = gson.fromJson(array.getString(i), Subjects.class);
+                subjectList.add(subject);
+            }
+            return subjectList;
+        }catch (Exception e){
+            Log.d(TAG,"seedGames parseException " + e);
+            e.printStackTrace();
+            return null;
+        }
+    }
+
+    public static List<Chapters> loadAvailableChapters(Context context){
+        try{
+            GsonBuilder builder = new GsonBuilder();
+            Gson gson = builder.create();
+            JSONArray array = new JSONArray(loadJSONFromAsset(context, "list_chapter.json"));
+            List<Chapters> chaptersList = new ArrayList<>();
+            for(int i=0;i<array.length();i++){
+                Chapters chapters = gson.fromJson(array.getString(i), Chapters.class);
+                chaptersList.add(chapters);
+            }
+            return chaptersList;
+        }catch (Exception e){
+            Log.d(TAG,"seedGames parseException " + e);
+            e.printStackTrace();
+            return null;
+        }
+    }
+
     private static String loadJSONFromAsset(Context context, String jsonFileName) {
         String json = null;
         InputStream is=null;

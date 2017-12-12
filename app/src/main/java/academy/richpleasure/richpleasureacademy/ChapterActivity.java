@@ -2,28 +2,40 @@ package academy.richpleasure.richpleasureacademy;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.DefaultItemAnimator;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.widget.ListView;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class ChapterActivity extends AppCompatActivity {
+
+    private RecyclerView chapterRecycleView;
+    private ChapterAdapters chapterAdapters;
+    private List<Chapters> chaptersList = new ArrayList<>();
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.chapter_item);
 
-        ArrayList<String> list = new ArrayList<String>();
-        list.add("item 1");
-        list.add("item 2");
+        chapterRecycleView = (RecyclerView) findViewById(R.id.chapterRecycleView);
+        chaptersList = Utils.loadAvailableChapters(this.getApplicationContext());
+        chapterAdapters = new ChapterAdapters(chaptersList);
 
-        ChapterAdapters adapter = new ChapterAdapters(list,this);
+        RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(getApplicationContext());
+        chapterRecycleView.setLayoutManager(layoutManager);
+        chapterRecycleView.setItemAnimator(new DefaultItemAnimator());
+        chapterRecycleView.setAdapter(chapterAdapters);
 
-        ListView listView = (ListView) findViewById(R.id.chapter_list_view);
-        listView.setAdapter(adapter);
 
         getSupportActionBar().setHomeButtonEnabled(true);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
     }
+
+
 
     @Override
     public boolean onSupportNavigateUp() {
