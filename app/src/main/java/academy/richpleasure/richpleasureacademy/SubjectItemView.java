@@ -43,7 +43,7 @@ public class SubjectItemView {
     @Resolve
     private void onResolved() {
         subjectTitle.setText(subjectListInfo.getSubjectNameStd());
-        Glide.with(subjectContext).load("http://photographyinspired.com/media/2014/01/Beautiful-Girl-Wallpapers.jpg").into(subjectImage);
+        Glide.with(subjectContext).load("https://randomuser.me/api/portraits/men/14.jpg").into(subjectImage);
     }
 
     public SubjectListInfo getInfo() {

@@ -34,7 +34,7 @@ public class ChapterAdapters extends RecyclerView.Adapter<ChapterAdapters.MyView
         Chapters chapters = chaptersList.get(position);
         holder.progressBar.setProgress(chapters.getPercentCompleted());
         holder.chapter_name_std.setText(chapters.getChapterNameStd());
-        holder.percent_completed.setText(chapters.getPercentCompleted().toString());
+        holder.percent_completed.setText(chapters.getPercentCompleted().toString()+"%");
 
         holder.itemView.setOnClickListener(new View.OnClickListener(){
 

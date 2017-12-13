@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_marginBottom="3dp"
@@ -11,18 +12,29 @@
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
         android:background="?android:attr/selectableItemBackground"
-        android:orientation="vertical"
+        android:orientation="horizontal"
         android:padding="10dp">
 
         <TextView
-            android:id="@+id/chapter_name_std"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            android:id="@+id/percent_completed"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:textAlignment="center"
+            android:textSize="25sp"
+            tools:text="100" />
 
         <LinearLayout
-            android:layout_width="match_parent"
+            android:layout_width="250dp"
             android:layout_height="match_parent"
-            android:orientation="horizontal">
+            android:padding="5dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/chapter_name_std"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1" />
 
             <ProgressBar
                 android:id="@+id/progressBar"
@@ -32,22 +44,6 @@
                 android:layout_weight="1"
                 android:max="100"
                 android:progress="0" />
-
-            <TextView
-                android:id="@+id/percent_completed"
-                android:layout_width="150dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="0"
-                android:textAlignment="center" />
-
-            <Button
-                android:id="@+id/start_now"
-                android:layout_width="200dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="Start Now"
-                android:textAlignment="center" />
 
         </LinearLayout>
 
