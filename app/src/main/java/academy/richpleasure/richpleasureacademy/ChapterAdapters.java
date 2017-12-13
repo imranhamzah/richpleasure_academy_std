@@ -63,6 +63,7 @@ public class ChapterAdapters extends RecyclerView.Adapter<ChapterAdapters.MyView
             super(itemView);
             chapter_name_std = (TextView) itemView.findViewById(R.id.chapter_name_std);
             progressBar = (ProgressBar) itemView.findViewById(R.id.progressBar);
+            progressBar.setScaleY(2.5f);
             percent_completed = (TextView) itemView.findViewById(R.id.percent_completed);
         }
     }
