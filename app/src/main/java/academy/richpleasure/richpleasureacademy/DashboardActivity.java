@@ -15,6 +15,7 @@ import android.support.design.widget.AppBarLayout;
 import android.support.design.widget.CollapsingToolbarLayout;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.graphics.Palette;
+import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
@@ -74,6 +75,10 @@ public class DashboardActivity extends DrawerActivity {
     private SQLiteHandler db;
     private SessionManager session;
 
+    private RecyclerView dashboardRecyclerView;
+    private SubjectAdapter subjectAdapter;
+    private List<Subjects> subjectsList = new ArrayList<>();
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -82,6 +87,21 @@ public class DashboardActivity extends DrawerActivity {
 
         setContentView(R.layout.activity_dashboard);
         ButterKnifeLite.bind(this);
+
+
+        subjectsList = Utils.loadAvailableSubjects(this.getApplicationContext());
+        subjectAdapter = new SubjectAdapter(subjectsList);
+
+        dashboardRecyclerView = (RecyclerView) findViewById(R.id.subjectListRecycler);
+        dashboardRecyclerView.setNestedScrollingEnabled(false);
+
+        RecyclerView.LayoutManager layoutManagerSubject = new LinearLayoutManager(getApplicationContext());
+        dashboardRecyclerView.setLayoutManager(layoutManagerSubject);
+        dashboardRecyclerView.setItemAnimator(new DefaultItemAnimator());
+        dashboardRecyclerView.setAdapter(subjectAdapter);
+        LinearLayoutManager linearLayoutManagerSubject = (LinearLayoutManager) layoutManagerSubject;
+        linearLayoutManagerSubject.setOrientation(LinearLayoutManager.HORIZONTAL);
+
 
         RecyclerView recyclerView = (RecyclerView) mLoadMoreView;
         recyclerView.setNestedScrollingEnabled(false);

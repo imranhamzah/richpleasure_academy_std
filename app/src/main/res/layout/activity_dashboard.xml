@@ -72,6 +72,32 @@
             android:orientation="vertical"
             android:padding="5dp">
 
+
+            <TextView
+                android:id="@+id/subjectListLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Subjects Row" />
+
+
+            <LinearLayout
+                android:id="@+id/subjectListRow"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/textOtherSubjects"
+                android:layout_marginBottom="20dp"
+                android:orientation="horizontal">
+
+                <android.support.v7.widget.RecyclerView
+                    android:id="@+id/subjectListRecycler"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                </android.support.v7.widget.RecyclerView>
+
+            </LinearLayout>
+
+
             <TextView
                 android:id="@+id/textOtherSubjects"
                 android:layout_width="wrap_content"
