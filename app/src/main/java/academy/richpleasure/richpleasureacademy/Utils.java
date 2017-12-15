@@ -136,6 +136,8 @@ public class Utils {
         }
     }
 
+
+
     public static List<Chapters> loadAvailableChapters(Context context){
         try{
             GsonBuilder builder = new GsonBuilder();
@@ -147,6 +149,24 @@ public class Utils {
                 chaptersList.add(chapters);
             }
             return chaptersList;
+        }catch (Exception e){
+            Log.d(TAG,"seedGames parseException " + e);
+            e.printStackTrace();
+            return null;
+        }
+    }
+
+    public static List<Tutor> loadFeaturedTutor(Context context){
+        try{
+            GsonBuilder builder = new GsonBuilder();
+            Gson gson = builder.create();
+            JSONArray array = new JSONArray(loadJSONFromAsset(context, "list_tutor.json"));
+            List<Tutor> tutorList = new ArrayList<>();
+            for(int i=0;i<array.length();i++){
+                Tutor tutor = gson.fromJson(array.getString(i), Tutor.class);
+                tutorList.add(tutor);
+            }
+            return tutorList;
         }catch (Exception e){
             Log.d(TAG,"seedGames parseException " + e);
             e.printStackTrace();
