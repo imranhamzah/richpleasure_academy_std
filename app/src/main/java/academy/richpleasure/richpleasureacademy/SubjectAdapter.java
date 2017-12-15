@@ -2,6 +2,7 @@ package academy.richpleasure.richpleasureacademy;
 
 import android.content.Context;
 import android.content.Intent;
+import android.content.res.Resources;
 import android.graphics.drawable.Drawable;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -33,8 +34,11 @@ public class SubjectAdapter extends RecyclerView.Adapter<SubjectAdapter.MyViewHo
         context = holder.itemView.getContext();
         Subjects subjects = subjectsList.get(position);
 
-        int drawableId=holder.itemView.getResources().getIdentifier(subjects.getIconFilename(), "drawable", context.getPackageName());
-        holder.iconFilename.setImageResource(drawableId);
+        String iconFilename = subjects.getIconFilename();
+        if (iconFilename.indexOf(".") > 0)
+        iconFilename = iconFilename.substring(0, iconFilename.lastIndexOf("."));
+
+        holder.iconFilename.setImageResource(context.getResources().getIdentifier(iconFilename, "drawable", context.getPackageName()));
         holder.subjectNameStd.setText(subjects.getSubjectNameStd());
         holder.itemView.setOnClickListener(new View.OnClickListener(){
 
