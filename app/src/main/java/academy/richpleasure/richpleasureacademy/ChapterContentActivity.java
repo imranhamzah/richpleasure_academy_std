@@ -1,5 +1,7 @@
 package academy.richpleasure.richpleasureacademy;
 
+import android.graphics.Color;
+import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.KeyEvent;
@@ -9,8 +11,9 @@ import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
 import android.widget.ProgressBar;
+import android.widget.TextView;
 
-public class ChapterContentActivity extends AppCompatActivity {
+public class ChapterContentActivity extends AppCompatActivity implements ConnectivityReceiver.ConnectivityReceiverListener {
 
     ProgressBar progressBar;
     WebView webView;
@@ -32,7 +35,47 @@ public class ChapterContentActivity extends AppCompatActivity {
         WebSettings webSettings = webView.getSettings();
         webSettings.setJavaScriptEnabled(true);
         webView.loadUrl("https://www.slideshare.net/itcsab/spm-2014-add-math-modul-sbp-super-score-lemah-k2-set-2-dan-skema?qid=8a458c3c-8dc3-417c-bebf-e1ce65d046f7&v=&b=&from_search=12");
+        checkConnection();
 
+    }
+
+    private void checkConnection() {
+        boolean isConnected = ConnectivityReceiver.isConnected();
+        showSnack(isConnected);
+    }
+
+    // Showing the status in Snackbar
+    private void showSnack(boolean isConnected) {
+        String message;
+        int color;
+        color = Color.WHITE;
+        if (isConnected) {
+            message = "Yea!! Connected to Internet";
+        } else {
+            message = "Sorry! Not connected to internet";
+            color = Color.RED;
+        }
+
+        Snackbar snackbar = Snackbar
+                .make(findViewById(R.id.fab), message, Snackbar.LENGTH_LONG);
+
+        View sbView = snackbar.getView();
+        TextView textView = (TextView) sbView.findViewById(android.support.design.R.id.snackbar_text);
+        textView.setTextColor(color);
+        snackbar.show();
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+
+        // register connection status listener
+        AppController.getInstance().setConnectivityListener(this);
+    }
+
+    @Override
+    public void onNetworkConnectionChanged(boolean isConnected) {
+        showSnack(isConnected);
     }
 
     public class AppWebViewClients extends WebViewClient {

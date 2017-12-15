@@ -21,6 +21,10 @@ public class AppController extends Application {
         mInstance = this;
     }
 
+    public void setConnectivityListener(ConnectivityReceiver.ConnectivityReceiverListener listener) {
+        ConnectivityReceiver.connectivityReceiverListener = listener;
+    }
+
     public static synchronized AppController getInstance() {
         return mInstance;
     }
