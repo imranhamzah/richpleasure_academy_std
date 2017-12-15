@@ -1,5 +1,6 @@
 package academy.richpleasure.richpleasureacademy;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.DefaultItemAnimator;
@@ -20,6 +21,10 @@ public class ChapterActivity extends AppCompatActivity {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.chapter_item);
+
+        Intent intent = getIntent();
+        String subjectNameStd = intent.getStringExtra("subjectNameStd");
+        setTitle(subjectNameStd);
 
         chapterRecycleView = (RecyclerView) findViewById(R.id.chapterRecycleView);
         chaptersList = Utils.loadAvailableChapters(this.getApplicationContext());

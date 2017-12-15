@@ -45,6 +45,7 @@ public class SubjectAdapter extends RecyclerView.Adapter<SubjectAdapter.MyViewHo
             @Override
             public void onClick(View v) {
                 Intent gotoChapter = new Intent (context,ChapterActivity.class);
+                gotoChapter.putExtra("subjectNameStd",subjects.getSubjectNameStd());
                 context.startActivity(gotoChapter);
             }
         });
