@@ -79,6 +79,10 @@ public class DashboardActivity extends DrawerActivity {
     private SubjectAdapter subjectAdapter;
     private List<Subjects> subjectsList = new ArrayList<>();
 
+    private RecyclerView tutorRecyclerView;
+    private TutorAdapter tutorAdapter;
+    private List<Tutor> tutorList = new ArrayList<>();
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -101,6 +105,19 @@ public class DashboardActivity extends DrawerActivity {
         dashboardRecyclerView.setAdapter(subjectAdapter);
         LinearLayoutManager linearLayoutManagerSubject = (LinearLayoutManager) layoutManagerSubject;
         linearLayoutManagerSubject.setOrientation(LinearLayoutManager.HORIZONTAL);
+
+        tutorList = Utils.loadFeaturedTutor(this.getApplicationContext());
+        tutorAdapter = new TutorAdapter(tutorList);
+
+        tutorRecyclerView = (RecyclerView) findViewById(R.id.featuredTutorRecycler);
+        tutorRecyclerView.setNestedScrollingEnabled(false);
+
+        RecyclerView.LayoutManager layoutManagerTutor = new LinearLayoutManager(getApplicationContext());
+        tutorRecyclerView.setLayoutManager(layoutManagerTutor);
+        tutorRecyclerView.setItemAnimator(new DefaultItemAnimator());
+        tutorRecyclerView.setAdapter(tutorAdapter);
+        LinearLayoutManager linearLayoutManagerTutor = (LinearLayoutManager) layoutManagerTutor;
+        linearLayoutManagerTutor.setOrientation(LinearLayoutManager.HORIZONTAL);
 
 
         RecyclerView recyclerView = (RecyclerView) mLoadMoreView;
@@ -424,6 +441,8 @@ public class DashboardActivity extends DrawerActivity {
             }
         }, 8000);
     }
+
+
 
     private void setupTutorView(){
 
