@@ -77,4 +77,5 @@ dependencies {
     compile project(path: ':smooth-checkbox')
     compile 'com.thefinestartist:ytpa:1.2.1'
     compile 'com.mcxiaoke.volley:library-aar:1.0.0'
+    compile 'com.vincentbrison.openlibraries.android:foldablelayout:0.0.1@aar'
 }

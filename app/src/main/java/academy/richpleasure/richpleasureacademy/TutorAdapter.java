@@ -39,6 +39,16 @@ public class TutorAdapter extends RecyclerView.Adapter<TutorAdapter.MyViewHolder
 
         Glide.with(context).load(tutor.getTchImageUrl()).into(tutorImage);
         tutorName.setText(tutor.getTchFirstName());
+
+
+        holder.itemView.setOnClickListener(new View.OnClickListener(){
+
+            @Override
+            public void onClick(View v) {
+                Intent gotoSubjectByTutotr = new Intent(context,SubjectsByTutor.class);
+                context.startActivity(gotoSubjectByTutotr);
+            }
+        });
     }
 
     @Override
