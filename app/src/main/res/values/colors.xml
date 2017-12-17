@@ -120,4 +120,7 @@
     <color name="lbl_name">#333333</color>
     <color name="btn_logut_bg">#ff6861</color>
 
+    <color name="contact_name">#333333</color>
+    <color name="contact_number">#8c8c8c</color>
+
 </resources>
