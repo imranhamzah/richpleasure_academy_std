@@ -16,7 +16,7 @@ import android.widget.TextView;
 public class ChapterContentActivity extends AppCompatActivity implements ConnectivityReceiver.ConnectivityReceiverListener {
 
     ProgressBar progressBar;
-    WebView webView;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -25,16 +25,8 @@ public class ChapterContentActivity extends AppCompatActivity implements Connect
         getSupportActionBar().setHomeButtonEnabled(true);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
-        webView = (WebView) findViewById(R.id.contentView);
-
         progressBar = (ProgressBar) findViewById(R.id.progressBar);
 
-        webView.setWebViewClient(new AppWebViewClients(progressBar));
-        webView.setWebChromeClient(new WebChromeClient()); // for alert, anyway.
-
-        WebSettings webSettings = webView.getSettings();
-        webSettings.setJavaScriptEnabled(true);
-        webView.loadUrl("https://www.slideshare.net/itcsab/spm-2014-add-math-modul-sbp-super-score-lemah-k2-set-2-dan-skema?qid=8a458c3c-8dc3-417c-bebf-e1ce65d046f7&v=&b=&from_search=12");
         checkConnection();
 
     }
@@ -82,9 +74,10 @@ public class ChapterContentActivity extends AppCompatActivity implements Connect
         private ProgressBar progressBar;
 
         public AppWebViewClients(ProgressBar progressBar) {
-            this.progressBar=progressBar;
+            this.progressBar = progressBar;
             progressBar.setVisibility(View.VISIBLE);
         }
+
         @Override
         public boolean shouldOverrideUrlLoading(WebView view, String url) {
             // TODO Auto-generated method stub
@@ -108,12 +101,7 @@ public class ChapterContentActivity extends AppCompatActivity implements Connect
 
     // To handle "Back" key press event for WebView to go back to previous screen.
     @Override
-    public boolean onKeyDown(int keyCode, KeyEvent event)
-    {
-        if ((keyCode == KeyEvent.KEYCODE_BACK) && webView.canGoBack()) {
-            webView.goBack();
-            return true;
-        }
+    public boolean onKeyDown(int keyCode, KeyEvent event) {
         return super.onKeyDown(keyCode, event);
     }
 
