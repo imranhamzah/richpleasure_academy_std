@@ -242,7 +242,7 @@ public class DashboardActivity extends DrawerActivity {
         alarmManager.setExact(AlarmManager.RTC_WAKEUP, cal.getTimeInMillis(), broadcast);
 
 //        setupSubjectView();
-        setSearchView();
+//        setSearchView();
         setupTutorView();
         setupSubjectAvailable();
 
@@ -323,8 +323,8 @@ public class DashboardActivity extends DrawerActivity {
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.menu_main, menu);
 
-        MenuItem item = menu.findItem(R.id.search);
-        searchView.setMenuItem(item);
+//        MenuItem item = menu.findItem(R.id.search);
+//        searchView.setMenuItem(item);
 
         return true;
     }
@@ -349,7 +349,8 @@ public class DashboardActivity extends DrawerActivity {
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()){
             case R.id.search:
-                finish();
+                Intent gotoGeneralSearch = new Intent(getApplicationContext(), GeneralSearchActivity.class);
+                startActivity(gotoGeneralSearch);
                 break;
             case R.id.inbox:
                 Intent inbox = new Intent(getApplicationContext(),InboxActivity.class);
